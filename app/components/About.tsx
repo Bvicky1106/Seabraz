@@ -133,7 +133,7 @@ export default function About() {
             {/* HEADING */}
             <h2
               className="
-                font-serif
+                
                 text-4xl
                 font-semibold
                 leading-[0.95]
@@ -144,12 +144,17 @@ export default function About() {
             >
               A Legacy Of
               <br />
-              <span className="text-white/35">Legal Precision</span>
+              <span
+                className="text-white/35 mt-4
+      block"
+              >
+                Legal Precision
+              </span>
             </h2>
 
             {/* TEXT */}
             <div className="mt-10 max-w-2xl space-y-7">
-              <p className="text-[15px] leading-8 text-white/60 font-semibold">
+              <p className="text-[15px] leading-8 text-white/60 font-semibold  text-justify">
                 Seabraz IPR & Corporate Law is a modern legal and corporate
                 consultancy dedicated to supporting startups, entrepreneurs,
                 businesses, and growing enterprises with strategic, reliable,
@@ -160,7 +165,7 @@ export default function About() {
                 with confidence.
               </p>
 
-              <p className="text-[15px] leading-8 text-white/60">
+              <p className="text-[15px] leading-8 text-white/60  text-justify">
                 Our team consists of qualified advocates, legal professionals,
                 consultants, and domain-specific experts, ensuring that every
                 matter is handled by experienced specialists in their respective
@@ -322,6 +327,7 @@ export default function About() {
                 max-w-2xl
                 leading-8
                 text-white/60
+                
               "
             >
               Our multidisciplinary legal practice delivers sophisticated
@@ -352,6 +358,7 @@ export default function About() {
                   hover:bg-white/[0.03]
 
                   lg:text-left
+                  
                 "
               >
                 <div
@@ -385,6 +392,7 @@ export default function About() {
                     text-2xl
                     leading-snug
                     text-white
+                    
                   "
                 >
                   {area.title}
@@ -397,6 +405,7 @@ export default function About() {
                     text-[15px]
                     leading-8
                     text-white/55
+                     text-justify
                   "
                 >
                   {area.description}

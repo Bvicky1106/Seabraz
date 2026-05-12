@@ -133,15 +133,16 @@ export default function DisclaimerPopup() {
                   sm:leading-8
 
                   text-center sm:text-left
+                  
                 "
               >
-                <p>
+                <p className="text-justify">
                   As per the rules of the Bar Council of India, advocates and
                   law firms are not permitted to solicit work or advertise
                   professional services.
                 </p>
 
-                <p>
+                <p className="text-justify">
                   The content on this website is provided solely for general
                   informational purposes and should not be considered legal
                   advice or professional solicitation. Accessing or using this
@@ -150,7 +151,7 @@ export default function DisclaimerPopup() {
                   unless formally agreed upon.
                 </p>
 
-                <p>
+                <p className="text-justify">
                   While the Firm strives to keep the information accurate and
                   updated, no warranties are made regarding its completeness or
                   reliability. Users are advised to seek independent legal
@@ -158,7 +159,7 @@ export default function DisclaimerPopup() {
                   website.
                 </p>
 
-                <p>
+                <p className="text-justify">
                   By continuing to use this website, you confirm that you have
                   read and understood this Disclaimer.
                 </p>

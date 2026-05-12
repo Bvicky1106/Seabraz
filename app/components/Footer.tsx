@@ -159,6 +159,7 @@ export default function Footer() {
                 md:max-w-xl
 
                 lg:max-w-md
+                 text-justify
               "
             >
               Seabraz IPR & Corporate Law is committed to delivering

@@ -115,16 +115,15 @@ export default function Hero() {
 
                 md:text-7xl
 
-                lg:text-[88px]
+                lg:text-[72px]
               "
             >
-              Elite Legal
+              Legal Counsel
               <br />
-              <span className="text-white/35">Advisory</span>
+              <span className="text-white/35">For IPR &</span>
               <br />
-              For Modern
+              Corporate Matters
               <br />
-              Enterprises
             </motion.h1>
 
             {/* DESCRIPTION */}
@@ -146,7 +145,7 @@ export default function Hero() {
 
   sm:mt-10
   sm:text-base
-
+ text-justify
   mx-auto
   lg:mx-0
 "
@@ -338,6 +337,7 @@ export default function Hero() {
                   text-sm
                   leading-8
                   text-white/55
+                   text-justify-center
                   
                 "
               >

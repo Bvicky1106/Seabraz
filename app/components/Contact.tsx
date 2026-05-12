@@ -148,7 +148,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-6 text-[15px] leading-relaxed text-white/55 md:text-[16px]"
+            className="mt-6 text-[15px] leading-relaxed text-white/55 md:text-[16px] "
           >
             Connect with Seabraz IPR & Corporate Law to discuss your legal,
             intellectual property, corporate, or compliance requirements with
@@ -183,7 +183,7 @@ export default function Contact() {
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleChange}
-                    placeholder="Madesh"
+                    placeholder="Sebraz"
                     onFocus={() => setFocused("Full Name")}
                     onBlur={() => setFocused(null)}
                     className={inputClass("Full Name")}
@@ -201,7 +201,7 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="madesh@company.com"
+                    placeholder="sebraz@company.com"
                     onFocus={() => setFocused("Email Address")}
                     onBlur={() => setFocused(null)}
                     className={inputClass("Email Address")}
@@ -222,7 +222,7 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+91 90031 38737"
+                    placeholder="+91 90000 00000"
                     onFocus={() => setFocused("Phone Number")}
                     onBlur={() => setFocused(null)}
                     className={inputClass("Phone Number")}
