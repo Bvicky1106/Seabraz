@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import logo from "../../public/seabraz.jpeg";
+import logo from "../../public/seabraz.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Practice", href: "#practice" },
-  { label: "Clients", href: "#clients" },
+
   { label: "Contact", href: "#contact" },
 ];
 

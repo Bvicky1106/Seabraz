@@ -15,7 +15,7 @@ const garamond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Seabraz IPR & Corporate Law Firm | Premier Legal Counsel",
+  title: "Seabraz IPR & Corporate Law Firm ",
   description:
     "Seabraz IPR & Corporate Law Firm — Trusted advisors in Intellectual Property Rights, Corporate Law, M&A, and International Trade. Delivering excellence across jurisdictions with precision, integrity, and strategic vision.",
   keywords: [
@@ -30,11 +30,11 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      { url: "/seabraz.jpeg", sizes: "32x32", type: "image/jpeg" },
-      { url: "/seabraz.jpeg", sizes: "192x192", type: "image/jpeg" },
-      { url: "/seabraz.jpeg", sizes: "512x512", type: "image/jpeg" },
+      { url: "/seabraz.png", sizes: "32x32", type: "image/png" },
+      { url: "/seabraz.png", sizes: "192x192", type: "image/png" },
+      { url: "/seabraz.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: "/seabraz.jpeg",
+    apple: "/seabraz.png",
   },
   openGraph: {
     title: "Seabraz IPR & Corporate Law Firm | Premier Legal Counsel",
