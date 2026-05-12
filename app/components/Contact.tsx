@@ -7,12 +7,12 @@ import { Mail, Phone, MapPin, Clock3, ArrowUpRight } from "lucide-react";
 const contactInfo = [
   {
     label: "Headquarters",
-    value: "42 Parliament Street, Connaught Place\nNew Delhi 110001, India",
+    value: "chennai arumbakkam",
     icon: MapPin,
   },
   {
     label: "Direct Line",
-    value: "+91 11 4567 8900",
+    value: "+91 90031 38737",
     icon: Phone,
   },
   {
@@ -124,7 +124,7 @@ export default function Contact() {
                     <input
                       type={label === "Email Address" ? "email" : "text"}
                       placeholder={
-                        label === "Full Name" ? "John Doe" : "john@company.com"
+                        label === "Full Name" ? "Madesh" : "madesh@company.com"
                       }
                       onFocus={() => setFocused(label)}
                       onBlur={() => setFocused(null)}
@@ -146,7 +146,7 @@ export default function Contact() {
                       type={label === "Phone Number" ? "tel" : "text"}
                       placeholder={
                         label === "Phone Number"
-                          ? "+91 9876543210"
+                          ? "+91 90031 38737"
                           : "Your Organization"
                       }
                       onFocus={() => setFocused(label)}

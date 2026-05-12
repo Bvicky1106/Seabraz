@@ -28,6 +28,14 @@ export const metadata: Metadata = {
     "mergers and acquisitions",
     "international trade law",
   ],
+  icons: {
+    icon: [
+      { url: "/seabraz.jpeg", sizes: "32x32", type: "image/jpeg" },
+      { url: "/seabraz.jpeg", sizes: "192x192", type: "image/jpeg" },
+      { url: "/seabraz.jpeg", sizes: "512x512", type: "image/jpeg" },
+    ],
+    apple: "/seabraz.jpeg",
+  },
   openGraph: {
     title: "Seabraz IPR & Corporate Law Firm | Premier Legal Counsel",
     description:
@@ -43,7 +51,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`h-full antialiased ${inter.variable} ${garamond.variable}`}>
+    <html
+      lang="en"
+      className={`h-full antialiased ${inter.variable} ${garamond.variable}`}
+    >
       <body className="min-h-full flex flex-col bg-[#0a0a0a] text-[#ededed]">
         {children}
       </body>
