@@ -6,9 +6,10 @@ import { useRef } from "react";
 const practiceAreas = [
   {
     number: "01",
-    title: "Trademark, Copyright & Brand Protection",
+    title:
+      "Trademark, Copyright, Geographical Indication (GI) & Brand Protection",
     description:
-      "Comprehensive legal support for trademark registration, copyright protection, brand monitoring, infringement advisory, opposition matters, portfolio management, and protection of intellectual assets for businesses, startups, creators, and enterprises.",
+      "Comprehensive legal support for trademark registration,copyright protection, Geographical Indication (GI) registration and advisory, brand monitoring, infringement advisory, opposition matters, portfolio management, and protection of intellectual assets for businesses, startups, creators, and enterprises.",
   },
   {
     number: "02",
@@ -348,18 +349,18 @@ export default function About() {
                   duration: 0.7,
                 }}
                 className="
-                  group relative
-                  min-h-[320px]
-                  overflow-hidden
-                  border-b border-r border-white/10
-                  p-8
-                  text-center
-                  transition-all duration-500
-                  hover:bg-white/[0.03]
+    group relative
+    min-h-[320px]
+    overflow-hidden
+    border-b border-r border-white/10
+    p-8
 
-                  lg:text-left
-                  
-                "
+    flex flex-col items-center justify-center
+    text-center
+
+    transition-all duration-500
+    hover:bg-white/[0.03]
+  "
               >
                 <div
                   className="

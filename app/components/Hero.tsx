@@ -5,8 +5,8 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const stats = [
-  { value: "2+", label: "Years Experience" },
-  { value: "98%", label: "Success Ratio" },
+  { value: "50+", label: "Companies Appoint Us as Legal Advisors" },
+  { value: "100%", label: "Success Ratio" },
 ];
 
 export default function Hero() {
@@ -104,26 +104,54 @@ export default function Hero() {
                 ease: [0.16, 1, 0.3, 1],
               }}
               className="
-                mt-8
-                text-[42px]
-                font-semibold
-                leading-[0.95]
-                tracking-tight
+    mt-8
+    text-[42px]
+    font-semibold
+    leading-[0.95]
+    tracking-tight
 
-                sm:mt-10
-                sm:text-6xl
+    sm:mt-10
+    sm:text-6xl
 
-                md:text-7xl
+    md:text-7xl
 
-                lg:text-[72px]
-              "
+    lg:text-[72px]
+  "
             >
-              Legal Counsel
-              <br />
-              <span className="text-white/35">For IPR &</span>
-              <br />
-              Corporate Matters
-              <br />
+              <span className="block">Legal Counsel</span>
+
+              <span
+                className="
+      mt-3
+      block
+      text-white/35
+
+      sm:mt-5
+    "
+              >
+                For IPR &
+              </span>
+
+              <span
+                className="
+      mt-3
+      block
+
+      sm:mt-5
+    "
+              >
+                Corporate
+              </span>
+              <span
+                className="
+      mt-3
+      block
+
+      sm:mt-5
+    "
+              >
+                Matters
+              </span>
             </motion.h1>
 
             {/* DESCRIPTION */}

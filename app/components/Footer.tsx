@@ -44,7 +44,8 @@ export default function Footer() {
             absolute bottom-0 left-1/2
             h-[260px] w-[260px]
             -translate-x-1/2
-            rounded-full bg-white/[0.03]
+            rounded-full
+            bg-white/[0.03]
             blur-3xl
 
             sm:h-[340px] sm:w-[340px]
@@ -60,29 +61,28 @@ export default function Footer() {
           mx-auto max-w-7xl
 
           px-5 py-14
+
           sm:px-8 sm:py-18
+
           lg:px-10 lg:py-24
         "
       >
         {/* TOP SECTION */}
         <div
           className="
-            grid gap-16
+            grid gap-20
 
-            md:text-center
             lg:grid-cols-[1.1fr_1fr]
             lg:gap-24
-            lg:text-left
           "
         >
-          {/* BRAND */}
+          {/* BRAND SECTION */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
             className="
               flex flex-col
-
               items-center
               text-center
 
@@ -91,7 +91,14 @@ export default function Footer() {
             "
           >
             {/* LOGO */}
-            <div className="flex items-center gap-4">
+            <div
+              className="
+                flex items-center justify-center
+                gap-4
+
+                lg:justify-start
+              "
+            >
               <div
                 className="
                   flex h-12 w-12
@@ -108,13 +115,14 @@ export default function Footer() {
                   alt="Seabraz Logo"
                   width={42}
                   height={42}
-                  className="object-contain rounded-full"
+                  className="rounded-full object-contain"
                 />
               </div>
 
               <div className="text-left">
                 <h2
                   className="
+                    font-[family-name:var(--font-space)]
                     text-[13px]
                     font-semibold
                     uppercase
@@ -130,6 +138,7 @@ export default function Footer() {
                 <p
                   className="
                     mt-1
+                    font-[family-name:var(--font-space)]
                     text-[10px]
                     uppercase
                     tracking-[0.16em]
@@ -146,20 +155,22 @@ export default function Footer() {
             {/* DESCRIPTION */}
             <p
               className="
-                mt-6
-                max-w-md
+                mt-7
+                max-w-full
 
+                text-center
+                font-[family-name:var(--font-inter)]
                 text-[14px]
-                leading-7
+                leading-8
                 text-white/55
 
                 sm:mt-8
+                sm:max-w-xl
                 sm:text-[15px]
 
-                md:max-w-xl
-
                 lg:max-w-md
-                 text-justify
+                lg:text-left
+                lg:text-justify
               "
             >
               Seabraz IPR & Corporate Law is committed to delivering
@@ -173,12 +184,12 @@ export default function Footer() {
             {/* SOCIALS */}
             <div
               className="
-                mt-8 flex flex-wrap
-
+                mt-8
+                flex flex-wrap
                 justify-center
-                gap-3
+                gap-4
 
-                sm:mt-10 sm:gap-4
+                sm:mt-10
 
                 lg:justify-start
               "
@@ -196,6 +207,7 @@ export default function Footer() {
 
                     px-4 py-2.5
 
+                    font-[family-name:var(--font-space)]
                     text-[10px]
                     uppercase
                     tracking-[0.18em]
@@ -207,7 +219,8 @@ export default function Footer() {
                     hover:bg-white/[0.05]
                     hover:text-white
 
-                    sm:px-5 sm:py-3
+                    sm:px-5
+                    sm:py-3
                     sm:text-[12px]
                   "
                 >
@@ -217,15 +230,18 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* LINKS */}
+          {/* LINKS GRID */}
           <div
             className="
               grid grid-cols-1
-              gap-12
+              gap-14
 
+              pt-2
               text-center
 
               sm:grid-cols-2
+              sm:gap-12
+
               md:grid-cols-3
 
               lg:text-left
@@ -242,7 +258,6 @@ export default function Footer() {
                 }}
                 className="
                   flex flex-col
-
                   items-center
 
                   lg:items-start
@@ -250,22 +265,30 @@ export default function Footer() {
               >
                 <h4
                   className="
-                    mb-5
+                    mb-6
 
+                    font-[family-name:var(--font-space)]
                     text-[10px]
                     font-semibold
                     uppercase
                     tracking-[0.18em]
                     text-white/40
 
-                    sm:mb-6
                     sm:text-[11px]
                   "
                 >
                   {col.title}
                 </h4>
 
-                <ul className="space-y-3 sm:space-y-4">
+                <ul
+                  className="
+                    flex flex-col
+                    items-center
+                    space-y-4
+
+                    lg:items-start
+                  "
+                >
                   {col.links.map((link) => (
                     <li key={link}>
                       <a
@@ -274,6 +297,7 @@ export default function Footer() {
                           group inline-flex
                           items-center gap-2
 
+                          font-[family-name:var(--font-inter)]
                           text-[13px]
                           font-light
                           text-white/55
@@ -307,44 +331,47 @@ export default function Footer() {
         </div>
 
         {/* DIVIDER */}
-        <div className="my-10 h-px w-full bg-white/[0.06] sm:my-14" />
+        <div
+          className="
+            my-12
+            h-px
+            w-full
+            bg-white/[0.06]
 
-        {/* BOTTOM */}
+            sm:my-14
+          "
+        />
+
+        {/* BOTTOM SECTION */}
         <div
           className="
             flex flex-col
-
             items-center
             justify-center
-            gap-5
+            gap-6
 
             text-center
-
-            md:gap-6
 
             lg:flex-row
             lg:justify-between
             lg:text-left
           "
         >
-          {/* POLICIES */}
+          {/* POLICY LINKS */}
           <div
             className="
               flex flex-wrap
-
               items-center
               justify-center
-
-              gap-4
-              sm:gap-5
+              gap-5
             "
           >
-            {/* PRIVACY POLICY PDF */}
             <a
               href="/privacy.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="
+                font-[family-name:var(--font-inter)]
                 text-[11px]
                 font-light
                 text-white/35
@@ -358,12 +385,12 @@ export default function Footer() {
               Privacy Policy
             </a>
 
-            {/* DISCLAIMER PDF */}
             <a
               href="/disclaimer.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="
+                font-[family-name:var(--font-inter)]
                 text-[11px]
                 font-light
                 text-white/35
@@ -381,15 +408,18 @@ export default function Footer() {
           {/* COPYRIGHT */}
           <p
             className="
-              max-w-sm
+              max-w-xs
 
+              text-center
+              font-[family-name:var(--font-inter)]
               text-[11px]
               leading-6
               text-white/30
 
+              sm:max-w-xl
               sm:text-[12px]
 
-              md:max-w-xl
+              lg:text-right
             "
           >
             © {new Date().getFullYear()} Seabraz IPR & Corporate Law Firm. All
