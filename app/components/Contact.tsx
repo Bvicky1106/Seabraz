@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Mail, Phone, MapPin, Clock3, ArrowUpRight } from "lucide-react";
 
 const contactInfo = [
@@ -43,6 +44,17 @@ export default function Contact() {
 
   const [focused, setFocused] = useState<string | null>(null);
 
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    company: "",
+    interest: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
   const inputClass = (field: string) =>
     `w-full bg-transparent border rounded-xl px-4 py-4 text-[14px] transition-all duration-300 outline-none
     ${
@@ -51,6 +63,55 @@ export default function Contact() {
         : "border-white/10 text-white/70 hover:border-white/20"
     }
     placeholder:text-white/20`;
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const sendEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        "service_twmmlwo",
+        "YOUR_TEMPLATE_ID",
+        {
+          full_name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          interest: formData.interest,
+          message: formData.message,
+        },
+        "YOUR_PUBLIC_KEY",
+      );
+
+      alert("Inquiry submitted successfully.");
+
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        company: "",
+        interest: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send inquiry.");
+    }
+
+    setLoading(false);
+  };
 
   return (
     <section
@@ -64,12 +125,12 @@ export default function Contact() {
 
       <div className="relative z-10 container mx-auto px-6">
         {/* Heading */}
-        <div ref={headRef} className="max-w-3xl mx-auto text-center mb-20">
+        <div ref={headRef} className="mx-auto mb-20 max-w-3xl text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 border border-white/10 bg-white/[0.03] px-4 py-2 rounded-full text-[11px] tracking-[0.2em] uppercase text-white/50"
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[11px] uppercase tracking-[0.2em] text-white/50"
           >
             Contact Us
           </motion.span>
@@ -78,7 +139,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-8 text-4xl sm:text-5xl md:text-6xl font-serif font-semibold tracking-tight text-white leading-tight"
+            className="mt-8 font-serif text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl"
           >
             Request a Consultation
           </motion.h2>
@@ -87,90 +148,115 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-6 text-white/55 leading-relaxed text-[15px] md:text-[16px]"
+            className="mt-6 text-[15px] leading-relaxed text-white/55 md:text-[16px]"
           >
             Connect with Seabraz IPR & Corporate Law to discuss your legal,
             intellectual property, corporate, or compliance requirements with
-            confidence and clarity. Our team is committed to providing
-            professional guidance, transparent communication, and practical
-            legal solutions tailored to your specific needs. We value
-            professionalism and client comfort above aggressive follow-ups. Your
-            inquiries are handled with respect, confidentiality, and discretion
-            — without unnecessary calls, repeated messages, or unwanted emails.
-            We believe clients should make informed decisions comfortably,
-            without pressure or inconvenience.
+            confidence and clarity.
           </motion.p>
         </div>
 
         {/* Main Layout */}
         <div
           ref={formRef}
-          className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-start max-w-7xl mx-auto"
+          className="mx-auto grid max-w-7xl items-start gap-10 lg:grid-cols-[1.1fr_0.9fr]"
         >
           {/* Form */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={formInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="relative border border-white/10 bg-white/[0.03] backdrop-blur-xl rounded-[32px] p-8 md:p-12 shadow-2xl"
+            className="relative rounded-[32px] border border-white/10 bg-white/[0.03] p-8 shadow-2xl backdrop-blur-xl md:p-12"
           >
             <div className="absolute inset-0 rounded-[32px] border border-white/[0.03]" />
 
-            <form
-              className="relative z-10 space-y-8"
-              onSubmit={(e) => e.preventDefault()}
-            >
+            <form className="relative z-10 space-y-8" onSubmit={sendEmail}>
               {/* Name + Email */}
-              <div className="grid sm:grid-cols-2 gap-6">
-                {["Full Name", "Email Address"].map((label) => (
-                  <div key={label}>
-                    <label className="block text-[11px] uppercase tracking-[0.15em] text-white/45 mb-3">
-                      {label}
-                    </label>
+              <div className="grid gap-6 sm:grid-cols-2">
+                <div>
+                  <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45">
+                    Full Name
+                  </label>
 
-                    <input
-                      type={label === "Email Address" ? "email" : "text"}
-                      placeholder={
-                        label === "Full Name" ? "Madesh" : "madesh@company.com"
-                      }
-                      onFocus={() => setFocused(label)}
-                      onBlur={() => setFocused(null)}
-                      className={inputClass(label)}
-                    />
-                  </div>
-                ))}
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    placeholder="Madesh"
+                    onFocus={() => setFocused("Full Name")}
+                    onBlur={() => setFocused(null)}
+                    className={inputClass("Full Name")}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45">
+                    Email Address
+                  </label>
+
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="madesh@company.com"
+                    onFocus={() => setFocused("Email Address")}
+                    onBlur={() => setFocused(null)}
+                    className={inputClass("Email Address")}
+                    required
+                  />
+                </div>
               </div>
 
               {/* Phone + Company */}
-              <div className="grid sm:grid-cols-2 gap-6">
-                {["Phone Number", "Company"].map((label) => (
-                  <div key={label}>
-                    <label className="block text-[11px] uppercase tracking-[0.15em] text-white/45 mb-3">
-                      {label}
-                    </label>
+              <div className="grid gap-6 sm:grid-cols-2">
+                <div>
+                  <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45">
+                    Phone Number
+                  </label>
 
-                    <input
-                      type={label === "Phone Number" ? "tel" : "text"}
-                      placeholder={
-                        label === "Phone Number"
-                          ? "+91 90031 38737"
-                          : "Your Organization"
-                      }
-                      onFocus={() => setFocused(label)}
-                      onBlur={() => setFocused(null)}
-                      className={inputClass(label)}
-                    />
-                  </div>
-                ))}
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+91 90031 38737"
+                    onFocus={() => setFocused("Phone Number")}
+                    onBlur={() => setFocused(null)}
+                    className={inputClass("Phone Number")}
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45">
+                    Company
+                  </label>
+
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Your Organization"
+                    onFocus={() => setFocused("Company")}
+                    onBlur={() => setFocused(null)}
+                    className={inputClass("Company")}
+                  />
+                </div>
               </div>
 
               {/* Select */}
               <div>
-                <label className="block text-[11px] uppercase tracking-[0.15em] text-white/45 mb-3">
+                <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45">
                   Area of Interest
                 </label>
 
                 <select
+                  name="interest"
+                  value={formData.interest}
+                  onChange={handleChange}
                   onFocus={() => setFocused("select")}
                   onBlur={() => setFocused(null)}
                   className={`${inputClass(
@@ -181,19 +267,19 @@ export default function Contact() {
                     Select an area
                   </option>
 
-                  <option value="ip" className="bg-black">
+                  <option value="Intellectual Property" className="bg-black">
                     Intellectual Property
                   </option>
 
-                  <option value="corporate" className="bg-black">
+                  <option value="Corporate Law" className="bg-black">
                     Corporate Law
                   </option>
 
-                  <option value="ma" className="bg-black">
+                  <option value="Mergers & Acquisitions" className="bg-black">
                     Mergers & Acquisitions
                   </option>
 
-                  <option value="trade" className="bg-black">
+                  <option value="International Trade" className="bg-black">
                     International Trade
                   </option>
                 </select>
@@ -201,16 +287,20 @@ export default function Contact() {
 
               {/* Message */}
               <div>
-                <label className="block text-[11px] uppercase tracking-[0.15em] text-white/45 mb-3">
+                <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45">
                   Message
                 </label>
 
                 <textarea
                   rows={5}
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Briefly describe your legal matter..."
                   onFocus={() => setFocused("msg")}
                   onBlur={() => setFocused(null)}
                   className={`${inputClass("msg")} resize-none`}
+                  required
                 />
               </div>
 
@@ -218,9 +308,12 @@ export default function Contact() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="group inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl text-[12px] font-semibold tracking-[0.18em] uppercase transition-all duration-300 hover:bg-neutral-200"
+                type="submit"
+                disabled={loading}
+                className="group inline-flex items-center gap-3 rounded-xl bg-white px-8 py-4 text-[12px] font-semibold uppercase tracking-[0.18em] text-black transition-all duration-300 hover:bg-neutral-200"
               >
-                Submit Inquiry
+                {loading ? "Sending..." : "Submit Inquiry"}
+
                 <ArrowUpRight
                   size={16}
                   className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
@@ -234,7 +327,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 30 }}
             animate={formInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="grid sm:grid-cols-2 lg:grid-cols-1 gap-6"
+            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1"
           >
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
@@ -242,19 +335,19 @@ export default function Contact() {
               return (
                 <div
                   key={index}
-                  className="group border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] rounded-3xl p-7 transition-all duration-500"
+                  className="group rounded-3xl border border-white/10 bg-white/[0.02] p-7 transition-all duration-500 hover:bg-white/[0.04]"
                 >
                   <div className="flex items-start gap-5">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.06] border border-white/10">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06]">
                       <Icon size={20} className="text-white/80" />
                     </div>
 
                     <div>
-                      <h3 className="text-[11px] uppercase tracking-[0.18em] text-white/40 mb-3">
+                      <h3 className="mb-3 text-[11px] uppercase tracking-[0.18em] text-white/40">
                         {info.label}
                       </h3>
 
-                      <p className="text-[15px] leading-relaxed text-white/80 whitespace-pre-line">
+                      <p className="whitespace-pre-line text-[15px] leading-relaxed text-white/80">
                         {info.value}
                       </p>
                     </div>

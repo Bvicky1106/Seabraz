@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-black text-white font-serif"
+      className="relative overflow-hidden bg-black text-white "
     >
       {/* GRID BACKGROUND */}
       <div
@@ -136,19 +136,20 @@ export default function Hero() {
                 duration: 0.8,
               }}
               className="
-                mt-8
-                max-w-xl
-                text-[15px]
-                leading-8
-                text-white/60
+  mt-8
+  max-w-xl
+  font-[family-name:var(--font-inter)]
+  text-[15px]
+  leading-8
+  text-white/60
+  font-normal
 
-                sm:mt-10
-                sm:text-base
+  sm:mt-10
+  sm:text-base
 
-                mx-auto
-                lg:mx-0
-                font-semibold
-              "
+  mx-auto
+  lg:mx-0
+"
             >
               Seabraz IPR & Corporate Law delivers strategic legal, intellectual
               property, corporate, and compliance solutions for startups,
@@ -253,7 +254,6 @@ export default function Hero() {
           </div>
 
           {/* RIGHT VISUAL */}
-          {/* RIGHT VISUAL */}
           <motion.div
             initial={{
               opacity: 0,
@@ -270,79 +270,61 @@ export default function Hero() {
               ease: [0.16, 1, 0.3, 1],
             }}
             className="
-    relative
-    flex flex-col
-    items-center
-    justify-center
+              relative
+              flex flex-col
+              items-center
+              justify-center
 
-    mt-4
-    w-full
+              mt-4
+              w-full
 
-    lg:mt-0
-  "
+              lg:mt-0
+            "
           >
             {/* GLOW */}
             <div
               className="
-      absolute
-      h-[300px] w-[300px]
-      sm:h-[380px] sm:w-[380px]
-      lg:h-[420px] lg:w-[420px]
-      rounded-full
-      bg-white/[0.04]
-      blur-3xl
-    "
+                absolute
+                h-[300px] w-[300px]
+                sm:h-[380px] sm:w-[380px]
+                lg:h-[420px] lg:w-[420px]
+                rounded-full
+                bg-white/[0.04]
+                blur-3xl
+              "
             />
 
-            {/* HOVER ZOOM LOGO */}
-            <motion.div
-              whileHover={{
-                scale: 1.12,
-              }}
-              transition={{
-                duration: 0.5,
-                ease: "easeInOut",
-              }}
+            {/* LOGO */}
+            <Image
+              src="/out.png"
+              alt="Seabraz Logo"
+              width={520}
+              height={520}
+              priority
               className="
-      relative z-10
-      cursor-pointer
-    "
-            >
-              <Image
-                src="/out.png"
-                alt="Seabraz Logo"
-                width={520}
-                height={520}
-                priority
-                className="
-        w-[280px]
-        sm:w-[340px]
-        md:w-[420px]
-        lg:w-[520px]
-        h-auto
-        object-contain
-        opacity-95
-
-        drop-shadow-[0_0_40px_rgba(255,255,255,0.08)]
-
-        transition-all duration-500
-        hover:drop-shadow-[0_0_70px_rgba(255,255,255,0.18)]
-      "
-              />
-            </motion.div>
+                relative z-10
+                w-[280px]
+                sm:w-[340px]
+                md:w-[420px]
+                lg:w-[520px]
+                h-auto
+                object-contain
+                opacity-95
+                drop-shadow-[0_0_40px_rgba(255,255,255,0.08)]
+              "
+            />
 
             {/* TEXT */}
             <div className="relative z-10 mt-8 text-center px-4">
               <p
                 className="
-        text-[10px]
-        sm:text-[11px]
-        uppercase
-        tracking-[0.35em]
-        text-white/40
-        font-sans
-        font-semibold
-      "
+                  text-[10px]
+                  sm:text-[11px]
+                  uppercase
+                  tracking-[0.35em]
+                  text-white/40
+                  font-sans
+                "
               >
                 Seabraz IPR & Corporate Law
               </p>
@@ -351,15 +333,13 @@ export default function Hero() {
 
               <p
                 className="
-        mt-5
-        max-w-md
-        text-sm
-        leading-8
-        text-white/55
-        font-semibold
-        font-serif
-        
-      "
+                  mt-5
+                  max-w-md
+                  text-sm
+                  leading-8
+                  text-white/55
+                  
+                "
               >
                 Strategic legal advisory for startups, enterprises,
                 corporations, and modern businesses across India and
