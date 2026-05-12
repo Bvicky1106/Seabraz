@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const footerLinks = [
   {
@@ -82,9 +83,16 @@ export default function Footer() {
                   sm:h-14 sm:w-14
                 "
               >
-                <span className="font-serif text-xl font-bold text-white sm:text-2xl">
-                  S
-                </span>
+                <Image
+                  src="/seabraz.png"
+                  alt="Seabraz Logo"
+                  width={42}
+                  height={42}
+                  className="
+    object-contain
+    rounded-full
+  "
+                />
               </div>
 
               <div className="text-left">
