@@ -88,27 +88,12 @@ export default function Header() {
               <div
                 className="
   relative w-11 h-11
-  border border-white/10
-  bg-white/[0.03]
   flex items-center justify-center
   overflow-hidden
   transition-all duration-500
-  group-hover:border-white/40
-  group-hover:rotate-6
   "
               >
                 {/* Hover Glow */}
-                <div
-                  className="
-    absolute inset-0
-    bg-gradient-to-br
-    from-white/[0.12]
-    to-transparent
-    opacity-0
-    group-hover:opacity-100
-    transition-opacity duration-500
-    "
-                />
 
                 <Image
                   src={logo}
