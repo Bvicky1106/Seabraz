@@ -9,11 +9,11 @@ const footerLinks = [
   {
     title: "Practice Areas",
     links: [
+      "Trademark",
       "Intellectual Property",
       "Corporate Law",
-      "Mergers & Acquisitions",
-      "International Trade",
-      "Data Privacy",
+      "Commercial Contracts",
+      "Business Registrations",
       "Dispute Resolution",
     ],
   },
@@ -42,11 +42,13 @@ export default function Footer() {
         <div
           className="
             absolute bottom-0 left-1/2
-            h-[300px] w-[300px]
+            h-[260px] w-[260px]
             -translate-x-1/2
             rounded-full bg-white/[0.03]
             blur-3xl
-            sm:h-[400px] sm:w-[400px]
+
+            sm:h-[340px] sm:w-[340px]
+            lg:h-[420px] lg:w-[420px]
           "
         />
       </div>
@@ -56,21 +58,37 @@ export default function Footer() {
         className="
           relative z-10
           mx-auto max-w-7xl
-          px-5 py-16
-          text-center
-          sm:px-6 sm:py-20
-          lg:px-10 lg:py-28
-          lg:text-left
+
+          px-5 py-14
+          sm:px-8 sm:py-18
+          lg:px-10 lg:py-24
         "
       >
         {/* TOP SECTION */}
-        <div className="grid gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-24">
+        <div
+          className="
+            grid gap-16
+
+            md:text-center
+            lg:grid-cols-[1.1fr_1fr]
+            lg:gap-24
+            lg:text-left
+          "
+        >
           {/* BRAND */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
-            className="mx-auto flex max-w-xl flex-col items-center lg:items-start"
+            className="
+              flex flex-col
+
+              items-center
+              text-center
+
+              lg:items-start
+              lg:text-left
+            "
           >
             {/* LOGO */}
             <div className="flex items-center gap-4">
@@ -78,8 +96,10 @@ export default function Footer() {
                 className="
                   flex h-12 w-12
                   items-center justify-center
-                  rounded-2xl border border-white/10
+                  rounded-2xl
+                  border border-white/10
                   bg-white/[0.03]
+
                   sm:h-14 sm:w-14
                 "
               >
@@ -88,10 +108,7 @@ export default function Footer() {
                   alt="Seabraz Logo"
                   width={42}
                   height={42}
-                  className="
-    object-contain
-    rounded-full
-  "
+                  className="object-contain rounded-full"
                 />
               </div>
 
@@ -99,9 +116,11 @@ export default function Footer() {
                 <h2
                   className="
                     text-[13px]
-                    font-semibold uppercase
+                    font-semibold
+                    uppercase
                     tracking-[0.22em]
                     text-white
+
                     sm:text-[15px]
                   "
                 >
@@ -110,9 +129,12 @@ export default function Footer() {
 
                 <p
                   className="
-                    mt-1 text-[10px]
-                    uppercase tracking-[0.16em]
+                    mt-1
+                    text-[10px]
+                    uppercase
+                    tracking-[0.16em]
                     text-white/40
+
                     sm:text-[11px]
                   "
                 >
@@ -126,35 +148,64 @@ export default function Footer() {
               className="
                 mt-6
                 max-w-md
+
                 text-[14px]
-                leading-7 text-white/55
+                leading-7
+                text-white/55
+
                 sm:mt-8
                 sm:text-[15px]
+
+                md:max-w-xl
+
+                lg:max-w-md
               "
             >
-              Delivering strategic legal counsel with integrity, precision, and
-              deep industry expertise across intellectual property, corporate
-              law, and global business transactions.
+              Seabraz IPR & Corporate Law is committed to delivering
+              professional, reliable, and business-focused legal solutions with
+              integrity, precision, and expert-driven guidance. We strive to
+              build lasting relationships through trust, transparency, and a
+              dedication to protecting the interests, innovations, and growth of
+              every client we serve.
             </p>
 
             {/* SOCIALS */}
-            <div className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-10 sm:gap-4 lg:justify-start">
+            <div
+              className="
+                mt-8 flex flex-wrap
+
+                justify-center
+                gap-3
+
+                sm:mt-10 sm:gap-4
+
+                lg:justify-start
+              "
+            >
               {["LinkedIn", "Twitter"].map((social) => (
                 <a
                   key={social}
                   href="#"
                   className="
                     group flex items-center gap-2
-                    rounded-full border border-white/10
+
+                    rounded-full
+                    border border-white/10
                     bg-white/[0.03]
+
                     px-4 py-2.5
+
                     text-[10px]
-                    uppercase tracking-[0.18em]
+                    uppercase
+                    tracking-[0.18em]
                     text-white/60
+
                     transition-all duration-300
+
                     hover:border-white/20
                     hover:bg-white/[0.05]
                     hover:text-white
+
                     sm:px-5 sm:py-3
                     sm:text-[12px]
                   "
@@ -169,9 +220,14 @@ export default function Footer() {
           <div
             className="
               grid grid-cols-1
-              gap-10
+              gap-12
+
+              text-center
+
               sm:grid-cols-2
               md:grid-cols-3
+
+              lg:text-left
             "
           >
             {footerLinks.map((col, i) => (
@@ -183,14 +239,24 @@ export default function Footer() {
                   delay: 0.1 + i * 0.1,
                   duration: 0.6,
                 }}
-                className="flex flex-col items-center lg:items-start"
+                className="
+                  flex flex-col
+
+                  items-center
+
+                  lg:items-start
+                "
               >
                 <h4
                   className="
-                    mb-5 text-[10px]
-                    font-semibold uppercase
+                    mb-5
+
+                    text-[10px]
+                    font-semibold
+                    uppercase
                     tracking-[0.18em]
                     text-white/40
+
                     sm:mb-6
                     sm:text-[11px]
                   "
@@ -206,10 +272,14 @@ export default function Footer() {
                         className="
                           group inline-flex
                           items-center gap-2
+
                           text-[13px]
-                          font-light text-white/55
+                          font-light
+                          text-white/55
+
                           transition-all duration-300
                           hover:text-white
+
                           sm:text-[14px]
                         "
                       >
@@ -220,6 +290,7 @@ export default function Footer() {
                           className="
                             opacity-0
                             transition-all duration-300
+
                             group-hover:-translate-y-0.5
                             group-hover:translate-x-0.5
                             group-hover:opacity-100
@@ -241,49 +312,83 @@ export default function Footer() {
         <div
           className="
             flex flex-col
-            items-center gap-5
+
+            items-center
+            justify-center
+            gap-5
+
             text-center
-            md:flex-row
-            md:justify-between
-            md:text-left
+
+            md:gap-6
+
+            lg:flex-row
+            lg:justify-between
+            lg:text-left
           "
         >
           {/* POLICIES */}
           <div
             className="
               flex flex-wrap
-              items-center justify-center
+
+              items-center
+              justify-center
+
               gap-4
               sm:gap-5
-              md:justify-start
             "
           >
-            {["Privacy Policy", "Terms of Service", "Disclaimer"].map(
-              (item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="
-                  text-[11px]
-                  font-light text-white/35
-                  transition-colors duration-300
-                  hover:text-white/70
-                  sm:text-[12px]
-                "
-                >
-                  {item}
-                </a>
-              ),
-            )}
+            {/* PRIVACY POLICY PDF */}
+            <a
+              href="/privacy.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                text-[11px]
+                font-light
+                text-white/35
+
+                transition-colors duration-300
+                hover:text-white/70
+
+                sm:text-[12px]
+              "
+            >
+              Privacy Policy
+            </a>
+
+            {/* DISCLAIMER PDF */}
+            <a
+              href="/disclaimer.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                text-[11px]
+                font-light
+                text-white/35
+
+                transition-colors duration-300
+                hover:text-white/70
+
+                sm:text-[12px]
+              "
+            >
+              Disclaimer
+            </a>
           </div>
 
           {/* COPYRIGHT */}
           <p
             className="
               max-w-sm
+
               text-[11px]
-              leading-6 text-white/30
+              leading-6
+              text-white/30
+
               sm:text-[12px]
+
+              md:max-w-xl
             "
           >
             © {new Date().getFullYear()} Seabraz IPR & Corporate Law Firm. All

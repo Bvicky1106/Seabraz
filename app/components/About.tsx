@@ -6,39 +6,39 @@ import { useRef } from "react";
 const practiceAreas = [
   {
     number: "01",
-    title: "Intellectual Property",
+    title: "Trademark, Copyright & Brand Protection",
     description:
-      "Patent prosecution, trademark registration, copyright protection, and strategic IP litigation across global jurisdictions.",
+      "Comprehensive legal support for trademark registration, copyright protection, brand monitoring, infringement advisory, opposition matters, portfolio management, and protection of intellectual assets for businesses, startups, creators, and enterprises.",
   },
   {
     number: "02",
-    title: "Corporate Law",
+    title: "Patent, Design & Intellectual Property Advisory",
     description:
-      "Corporate governance, board advisory, compliance frameworks, and entity structuring for modern enterprises.",
+      "Professional assistance in patent advisory, industrial design registration, IP strategy, innovation protection, licensing support, intellectual asset management, and legal guidance for safeguarding business innovations and creative works.",
   },
   {
     number: "03",
-    title: "Mergers & Acquisitions",
+    title: "Corporate Law & Business Compliance",
     description:
-      "Comprehensive M&A advisory including due diligence, transaction structuring, and post-merger integration.",
+      "Strategic legal solutions for company incorporation, LLP registration, corporate governance, compliance management, regulatory filings, business structuring, shareholder matters, and ongoing corporate legal support.",
   },
   {
     number: "04",
-    title: "International Trade",
+    title: "Commercial Contracts & Legal Documentation",
     description:
-      "Cross-border trade compliance, anti-dumping proceedings, customs regulations, and arbitration support.",
+      "Drafting, review, and legal vetting of agreements, contracts, partnership deeds, employment agreements, non-disclosure agreements, legal notices, commercial documentation, and business policies tailored to operational requirements.",
   },
   {
     number: "05",
-    title: "Data Privacy & Cyber Law",
+    title: "Business Registrations, Auditing & Advisory",
     description:
-      "Global privacy compliance, cybersecurity advisory, GDPR frameworks, and digital risk management.",
+      "End-to-end support for GST, MSME, IEC, startup registrations, licensing, compliance auditing, regulatory advisory, and professional business support services designed to ensure legal and operational efficiency",
   },
   {
     number: "06",
-    title: "Dispute Resolution",
+    title: "Dispute Resolution & Allied Legal Services",
     description:
-      "Commercial arbitration, litigation strategy, mediation, and high-stakes dispute resolution services.",
+      "While our primary expertise lies in IPR & Corporate Law, we also provide professional legal assistance in civil matters, family disputes, divorce proceedings, labour law, debt recovery, land registration, commercial disputes, and other allied legal matters through experienced domain-specific professionals.",
   },
 ];
 
@@ -59,60 +59,71 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-black text-white py-32"
+      className="relative overflow-hidden bg-black py-24 text-white sm:py-28 lg:py-32"
     >
-      {/* GRID BACKGROUND */}
+      {/* GRID */}
       <div
         className="
-        absolute inset-0 opacity-20
-        bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
-        bg-[size:90px_90px]
+          absolute inset-0 opacity-20
+          bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
+          bg-[size:80px_80px]
         "
       />
 
       {/* GLOW */}
       <div
         className="
-        absolute top-0 left-1/2 -translate-x-1/2
-        w-[900px] h-[900px]
-        bg-white/[0.03]
-        rounded-full blur-3xl
+          absolute left-1/2 top-0
+          h-[700px] w-[700px]
+          -translate-x-1/2
+          rounded-full
+          bg-white/[0.03]
+          blur-3xl
         "
       />
 
       {/* SIDE LINES */}
-      <div className="absolute left-10 top-0 bottom-0 w-px bg-white/[0.05] hidden lg:block" />
-      <div className="absolute right-10 top-0 bottom-0 w-px bg-white/[0.05] hidden lg:block" />
+      <div className="absolute left-10 top-0 bottom-0 hidden w-px bg-white/[0.05] xl:block" />
+      <div className="absolute right-10 top-0 bottom-0 hidden w-px bg-white/[0.05] xl:block" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
         {/* TOP SECTION */}
-        <div ref={storyRef} className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* LEFT CONTENT */}
+        <div
+          ref={storyRef}
+          className="
+            grid items-center gap-16
+            lg:grid-cols-2 lg:gap-20
+          "
+        >
+          {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={storyInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.9 }}
+            className="
+              flex flex-col
+              items-center text-center
+              lg:items-start lg:text-left
+            "
           >
             {/* TAG */}
             <div
               className="
-              inline-flex items-center gap-3
-              border border-white/10
-              bg-white/[0.03]
-              backdrop-blur-xl
-              px-5 py-2
-              rounded-full
-              mb-8
+                mb-8 inline-flex items-center gap-3
+                rounded-full border border-white/10
+                bg-white/[0.03]
+                px-5 py-2
+                backdrop-blur-xl
               "
             >
-              <div className="w-2 h-2 rounded-full bg-white/60" />
+              <div className="h-2 w-2 rounded-full bg-white/60" />
 
               <span
                 className="
-                text-[10px]
-                uppercase
-                tracking-[0.3em]
-                text-white/60
+                  text-[10px]
+                  uppercase tracking-[0.3em]
+                  text-white/60
+                  font-semibold
                 "
               >
                 About Seabraz
@@ -122,11 +133,13 @@ export default function About() {
             {/* HEADING */}
             <h2
               className="
-              text-4xl sm:text-5xl lg:text-7xl
-              leading-[0.95]
-              tracking-tight
-              font-serif
-              font-semibold
+                font-serif
+                text-4xl
+                font-semibold
+                leading-[0.95]
+                tracking-tight
+                sm:text-5xl
+                lg:text-7xl
               "
             >
               A Legacy Of
@@ -134,34 +147,44 @@ export default function About() {
               <span className="text-white/35">Legal Precision</span>
             </h2>
 
-            {/* DESCRIPTION */}
-            <div className="mt-10 space-y-7 max-w-xl">
-              <p className="text-white/60 leading-8 text-[15px]">
-                Seabraz is a modern law firm focused on delivering strategic
-                legal solutions for startups, businesses, and growing
-                enterprises. Our team is committed to providing reliable
-                guidance with professionalism, transparency, and attention to
-                detail.
+            {/* TEXT */}
+            <div className="mt-10 max-w-2xl space-y-7">
+              <p className="text-[15px] leading-8 text-white/60 font-semibold">
+                Seabraz IPR & Corporate Law is a modern legal and corporate
+                consultancy dedicated to supporting startups, entrepreneurs,
+                businesses, and growing enterprises with strategic, reliable,
+                and business focused professional solutions. Built on
+                professionalism, precision, and integrity,we combine legal
+                expertise with practical commercial understanding to help
+                clients navigate today’s evolving legal and corporate landscape
+                with confidence.
               </p>
 
-              <p className="text-white/60 leading-8 text-[15px]">
-                We specialize in intellectual property, corporate advisory, and
-                business legal services, helping clients navigate today’s
-                evolving legal and commercial landscape with confidence and
-                clarity.
+              <p className="text-[15px] leading-8 text-white/60">
+                Our team consists of qualified advocates, legal professionals,
+                consultants, and domain-specific experts, ensuring that every
+                matter is handled by experienced specialists in their respective
+                fields. With a strong commitment to transparency, efficiency,
+                and client-focused service, we deliver dependable legal,
+                corporate, compliance, and advisory support for clients across
+                India and international markets.
               </p>
             </div>
 
-            {/* BOTTOM LINE */}
-            <div className="mt-12 flex items-center gap-4">
-              <div className="w-14 h-px bg-white/20" />
+            {/* LINE */}
+            <div
+              className="
+                mt-12 flex items-center gap-4
+                justify-center lg:justify-start
+              "
+            >
+              <div className="h-px w-14 bg-white/20" />
 
               <span
                 className="
-                text-[10px]
-                uppercase
-                tracking-[0.35em]
-                text-white/40
+                  text-[10px]
+                  uppercase tracking-[0.35em]
+                  text-white/40
                 "
               >
                 Established 2026
@@ -177,29 +200,30 @@ export default function About() {
               duration: 1,
               delay: 0.2,
             }}
-            className="relative"
+            className="relative flex justify-center"
           >
             <div
               className="
-              relative
-              border border-white/10
-              bg-white/[0.03]
-              backdrop-blur-2xl
-              p-10 sm:p-14
-              overflow-hidden
+                relative
+                w-full max-w-2xl
+                overflow-hidden
+                border border-white/10
+                bg-white/[0.03]
+                p-8 backdrop-blur-2xl
+                sm:p-12 lg:p-14
               "
             >
               {/* INNER BORDER */}
               <div className="absolute inset-5 border border-white/10" />
 
-              {/* LARGE QUOTE */}
-              <div className="relative z-10">
+              <div className="relative z-10 text-center lg:text-left">
                 <div
                   className="
-                  text-[120px]
-                  font-serif
-                  text-white/10
-                  leading-none
+                    font-serif
+                    text-[90px]
+                    leading-none
+                    text-white/10
+                    sm:text-[120px]
                   "
                 >
                   “
@@ -207,76 +231,70 @@ export default function About() {
 
                 <blockquote
                   className="
-                  -mt-8
-                  text-2xl sm:text-3xl
-                  leading-relaxed
-                  font-serif
-                  text-white/80
+                    -mt-6
+                    font-serif
+                    text-2xl
+                    leading-relaxed
+                    text-white/80
+                    sm:text-3xl
                   "
                 >
-                  Justice is the constant and perpetual will to allot to every
-                  person their rightful due.
+                  “Thalliyathor Thozhil Seidhu Ulagil Vaazhvom”
                 </blockquote>
 
-                <div className="mt-10">
-                  <div className="w-12 h-px bg-white/20 mb-4" />
+                <div
+                  className="
+                    mt-10 flex flex-col items-center
+                    lg:items-start
+                  "
+                >
+                  <div className="mb-4 h-px w-12 bg-white/20" />
 
                   <p
                     className="
-                    text-[10px]
-                    uppercase
-                    tracking-[0.3em]
-                    text-white/40
+                      text-[10px]
+                      uppercase tracking-[0.3em]
+                      text-white/40
                     "
                   >
-                    — Domitius Ulpianus
+                    — Mahakavi Subramania Bharathiyar
                   </p>
                 </div>
               </div>
-
-              {/* GLOW */}
-              <div
-                className="
-                absolute -bottom-20 -right-20
-                w-72 h-72
-                bg-white/[0.04]
-                rounded-full blur-3xl
-                "
-              />
             </div>
           </motion.div>
         </div>
 
-        {/* SECTION DIVIDER */}
-        <div className="my-28 h-px w-full bg-white/10" />
+        {/* DIVIDER */}
+        <div className="my-24 h-px w-full bg-white/10" />
 
-        {/* PRACTICE SECTION */}
+        {/* PRACTICE */}
         <div id="practice" ref={practiceRef}>
           {/* TITLE */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={practiceInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl"
+            className="
+              mx-auto max-w-3xl
+              text-center
+            "
           >
             <div
               className="
-              inline-flex items-center gap-3
-              border border-white/10
-              bg-white/[0.03]
-              px-5 py-2
-              rounded-full
-              mb-8
+                mb-8 inline-flex items-center gap-3
+                rounded-full border border-white/10
+                bg-white/[0.03]
+                px-5 py-2
               "
             >
-              <div className="w-2 h-2 rounded-full bg-white/60" />
+              <div className="h-2 w-2 rounded-full bg-white/60" />
 
               <span
                 className="
-                text-[10px]
-                uppercase
-                tracking-[0.3em]
-                text-white/60
+                  text-[10px]
+                  uppercase tracking-[0.3em]
+                  text-white/60
                 "
               >
                 Practice Areas
@@ -285,32 +303,35 @@ export default function About() {
 
             <h2
               className="
-              text-4xl sm:text-5xl lg:text-6xl
-              font-serif
-              leading-[1]
-              tracking-tight
+                
+                text-4xl
+                leading-[1]
+                tracking-tight
+                sm:text-5xl
+                lg:text-6xl
+                font-semibold
               "
             >
               Areas Of
-              <span className="text-white/35"> Expertise</span>
+              <span className="text-white/35 font-semibold"> Expertise</span>
             </h2>
 
             <p
               className="
-              mt-8
-              text-white/60
-              leading-8
-              max-w-2xl
+                mx-auto mt-8
+                max-w-2xl
+                leading-8
+                text-white/60
               "
             >
               Our multidisciplinary legal practice delivers sophisticated
-              counsel across complex corporate, intellectual property,
-              regulatory, and international legal matters.
+              counsel across corporate, intellectual property, regulatory, and
+              international legal matters.
             </p>
           </motion.div>
 
-          {/* PRACTICE GRID */}
-          <div className="mt-20 grid md:grid-cols-2 lg:grid-cols-3 border border-white/10">
+          {/* GRID */}
+          <div className="mt-20 grid border border-white/10 md:grid-cols-2 lg:grid-cols-3">
             {practiceAreas.map((area, i) => (
               <motion.div
                 key={area.title}
@@ -321,76 +342,76 @@ export default function About() {
                   duration: 0.7,
                 }}
                 className="
-                group
-                relative
-                border-b border-r border-white/10
-                p-10
-                min-h-[320px]
-                overflow-hidden
-                hover:bg-white/[0.03]
-                transition-all duration-500
+                  group relative
+                  min-h-[320px]
+                  overflow-hidden
+                  border-b border-r border-white/10
+                  p-8
+                  text-center
+                  transition-all duration-500
+                  hover:bg-white/[0.03]
+
+                  lg:text-left
                 "
               >
-                {/* HOVER GLOW */}
                 <div
                   className="
-                  absolute inset-0
-                  bg-gradient-to-br
-                  from-white/[0.05]
-                  to-transparent
-                  opacity-0
-                  group-hover:opacity-100
-                  transition-opacity duration-500
+                    absolute inset-0
+                    bg-gradient-to-br
+                    from-white/[0.05]
+                    to-transparent
+                    opacity-0
+                    transition-opacity duration-500
+                    group-hover:opacity-100
                   "
                 />
 
-                {/* NUMBER */}
                 <span
                   className="
-                  relative z-10
-                  text-[13px]
-                  font-serif
-                  text-white/30
+                    relative z-10
+                    font-serif
+                    text-[13px]
+                    text-white/30
                   "
                 >
                   {area.number}
                 </span>
 
-                {/* TITLE */}
                 <h3
                   className="
-                  relative z-10
-                  mt-8
-                  text-2xl
-                  font-serif
-                  leading-snug
-                  text-white
+                    relative z-10
+                    mt-8
+                    font-serif
+                    text-2xl
+                    leading-snug
+                    text-white
                   "
                 >
                   {area.title}
                 </h3>
 
-                {/* DESCRIPTION */}
                 <p
                   className="
-                  relative z-10
-                  mt-6
-                  text-white/55
-                  leading-8
-                  text-[15px]
+                    relative z-10
+                    mt-6
+                    text-[15px]
+                    leading-8
+                    text-white/55
                   "
                 >
                   {area.description}
                 </p>
 
-                {/* BOTTOM LINE */}
                 <div
                   className="
-                  absolute bottom-10 left-10
-                  w-12 h-px
-                  bg-white/20
-                  transition-all duration-500
-                  group-hover:w-20
+                    absolute bottom-10 left-1/2
+                    h-px w-12
+                    -translate-x-1/2
+                    bg-white/20
+                    transition-all duration-500
+                    group-hover:w-20
+
+                    lg:left-10 lg:translate-x-0
                   "
                 />
               </motion.div>

@@ -7,22 +7,22 @@ import { Mail, Phone, MapPin, Clock3, ArrowUpRight } from "lucide-react";
 const contactInfo = [
   {
     label: "Headquarters",
-    value: "chennai arumbakkam",
+    value: "Maduravoyal, Chennai Tamil Nadu, India",
     icon: MapPin,
   },
   {
     label: "Direct Line",
-    value: "+91 90031 38737",
+    value: "+91 94456 62392\n+91 93604 43085",
     icon: Phone,
   },
   {
     label: "Email",
-    value: "counsel@seabraz.com",
+    value: "info@seabrazlegal.com",
     icon: Mail,
   },
   {
     label: "Business Hours",
-    value: "Monday — Friday\n9:00 AM — 6:00 PM IST",
+    value: "Monday — Saturday\n9:00 AM — 7:00 PM IST",
     icon: Clock3,
   },
 ];
@@ -89,9 +89,16 @@ export default function Contact() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-6 text-white/55 leading-relaxed text-[15px] md:text-[16px]"
           >
-            Reach out to discuss how our expertise can support your legal and
-            corporate objectives. Every engagement begins with discretion,
-            precision, and strategic clarity.
+            Connect with Seabraz IPR & Corporate Law to discuss your legal,
+            intellectual property, corporate, or compliance requirements with
+            confidence and clarity. Our team is committed to providing
+            professional guidance, transparent communication, and practical
+            legal solutions tailored to your specific needs. We value
+            professionalism and client comfort above aggressive follow-ups. Your
+            inquiries are handled with respect, confidentiality, and discretion
+            — without unnecessary calls, repeated messages, or unwanted emails.
+            We believe clients should make informed decisions comfortably,
+            without pressure or inconvenience.
           </motion.p>
         </div>
 

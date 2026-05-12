@@ -1,17 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Scale, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const stats = [
   { value: "2+", label: "Years Experience" },
-
   { value: "98%", label: "Success Ratio" },
 ];
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-black text-white">
+    <section
+      id="home"
+      className="relative overflow-hidden bg-black text-white font-serif"
+    >
       {/* GRID BACKGROUND */}
       <div
         className="
@@ -37,9 +40,33 @@ export default function Hero() {
 
       {/* MAIN CONTENT */}
       <div className="relative z-10 mx-auto max-w-7xl px-5 pt-28 pb-20 sm:px-6 sm:pt-32 lg:px-10 lg:pb-32">
-        <div className="grid min-h-[85vh] items-center gap-16 lg:grid-cols-2 lg:gap-24">
+        <div
+          className="
+            grid min-h-[85vh]
+            items-center
+            gap-14
+
+            text-center
+            justify-items-center
+
+            lg:grid-cols-2
+            lg:gap-24
+            lg:text-left
+            lg:justify-items-stretch
+          "
+        >
           {/* LEFT CONTENT */}
-          <div className="flex flex-col items-start text-left">
+          <div
+            className="
+              flex flex-col
+
+              items-center
+              text-center
+
+              lg:items-start
+              lg:text-left
+            "
+          >
             {/* BADGE */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -61,6 +88,7 @@ export default function Hero() {
                   uppercase tracking-[0.25em]
                   text-white/60
                   sm:text-[10px]
+                  font-sans
                 "
               >
                 Seabraz IPR & Corporate Law
@@ -77,12 +105,16 @@ export default function Hero() {
               }}
               className="
                 mt-8
-                font-serif text-[42px]
-                font-semibold leading-[0.95]
+                text-[42px]
+                font-semibold
+                leading-[0.95]
                 tracking-tight
+
                 sm:mt-10
                 sm:text-6xl
+
                 md:text-7xl
+
                 lg:text-[88px]
               "
             >
@@ -104,18 +136,27 @@ export default function Hero() {
                 duration: 0.8,
               }}
               className="
-                mt-8 max-w-xl
+                mt-8
+                max-w-xl
                 text-[15px]
-                leading-7 text-white/60
+                leading-8
+                text-white/60
+
                 sm:mt-10
                 sm:text-base
-                sm:leading-8
+
+                mx-auto
+                lg:mx-0
+                font-semibold
               "
             >
-              Delivering strategic excellence in Intellectual Property,
-              Corporate Governance, International Trade, Mergers & Acquisitions,
-              and cross-border legal advisory with precision, discretion, and
-              trust.
+              Seabraz IPR & Corporate Law delivers strategic legal, intellectual
+              property, corporate, and compliance solutions for startups,
+              entrepreneurs, businesses, and growing enterprises. Backed by a
+              team of qualified advocates, legal professionals, consultants, and
+              domain-specific experts, we provide reliable, business-focused
+              advisory services with professionalism, precision, and strategic
+              insight for clients across India and international markets.
             </motion.p>
 
             {/* BUTTONS */}
@@ -127,12 +168,21 @@ export default function Hero() {
                 duration: 0.8,
               }}
               className="
-                mt-10 flex w-full
-                flex-col gap-4
+                mt-10
+                flex w-full
+                flex-col
+                gap-4
+
                 sm:mt-14
                 sm:w-auto
                 sm:flex-row
                 sm:gap-5
+
+                items-center
+                justify-center
+
+                lg:items-start
+                lg:justify-start
               "
             >
               {/* PRIMARY BUTTON */}
@@ -149,6 +199,7 @@ export default function Hero() {
                   hover:scale-[1.02]
                   sm:px-8
                   sm:text-[11px]
+                  font-sans
                 "
               >
                 <div className="relative z-10 flex items-center justify-center gap-3">
@@ -193,6 +244,7 @@ export default function Hero() {
                   hover:text-white
                   sm:px-8
                   sm:text-[11px]
+                  font-sans
                 "
               >
                 Explore Expertise
@@ -201,99 +253,118 @@ export default function Hero() {
           </div>
 
           {/* RIGHT VISUAL */}
+          {/* RIGHT VISUAL */}
           <motion.div
             initial={{
               opacity: 0,
               scale: 0.9,
-              rotate: -4,
+              y: 40,
             }}
             animate={{
               opacity: 1,
               scale: 1,
-              rotate: 0,
+              y: 0,
             }}
             transition={{
               duration: 1.2,
               ease: [0.16, 1, 0.3, 1],
             }}
             className="
-              relative hidden
-              items-center justify-center
-              lg:flex
-            "
+    relative
+    flex flex-col
+    items-center
+    justify-center
+
+    mt-4
+    w-full
+
+    lg:mt-0
+  "
           >
+            {/* GLOW */}
             <div
               className="
-                relative h-[560px]
-                w-full max-w-[500px]
-                overflow-hidden
-                border border-white/10
-                bg-white/[0.03]
-                backdrop-blur-2xl
-                xl:h-[640px]
-              "
+      absolute
+      h-[300px] w-[300px]
+      sm:h-[380px] sm:w-[380px]
+      lg:h-[420px] lg:w-[420px]
+      rounded-full
+      bg-white/[0.04]
+      blur-3xl
+    "
+            />
+
+            {/* HOVER ZOOM LOGO */}
+            <motion.div
+              whileHover={{
+                scale: 1.12,
+              }}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+              }}
+              className="
+      relative z-10
+      cursor-pointer
+    "
             >
-              {/* INNER BORDER */}
-              <div className="absolute inset-6 border border-white/10" />
-
-              {/* NUMBER */}
-              <div className="absolute top-14 left-10 xl:top-16 xl:left-16">
-                <h2
-                  className="
-                    font-serif text-[110px]
-                    leading-none text-white/10
-                    xl:text-[150px]
-                  "
-                >
-                  2+
-                </h2>
-
-                <p
-                  className="
-                    mt-3 text-[10px]
-                    uppercase tracking-[0.3em]
-                    text-white/40
-                  "
-                >
-                  Years Of Trust
-                </p>
-              </div>
-
-              {/* CENTER LINE */}
-              <div className="absolute top-1/2 left-10 right-10 h-px bg-white/10 xl:left-16 xl:right-16" />
-
-              {/* CONTENT */}
-              <div className="absolute bottom-12 left-10 right-10 xl:bottom-16 xl:left-16 xl:right-16">
-                <p className="text-sm leading-7 text-white/60">
-                  Representing corporations, startups, and international clients
-                  with world-class legal intelligence and tailored strategic
-                  counsel.
-                </p>
-
-                <div className="mt-10 flex items-center gap-4">
-                  <div className="h-px w-12 bg-white/20" />
-
-                  <span
-                    className="
-                      text-[10px]
-                      uppercase tracking-[0.3em]
-                      text-white/40
-                    "
-                  >
-                    Since 2001
-                  </span>
-                </div>
-              </div>
-
-              {/* GLOW */}
-              <div
+              <Image
+                src="/out.png"
+                alt="Seabraz Logo"
+                width={520}
+                height={520}
+                priority
                 className="
-                  absolute -right-24 -bottom-24
-                  h-72 w-72
-                  rounded-full bg-white/[0.05]
-                  blur-3xl
-                "
+        w-[280px]
+        sm:w-[340px]
+        md:w-[420px]
+        lg:w-[520px]
+        h-auto
+        object-contain
+        opacity-95
+
+        drop-shadow-[0_0_40px_rgba(255,255,255,0.08)]
+
+        transition-all duration-500
+        hover:drop-shadow-[0_0_70px_rgba(255,255,255,0.18)]
+      "
               />
+            </motion.div>
+
+            {/* TEXT */}
+            <div className="relative z-10 mt-8 text-center px-4">
+              <p
+                className="
+        text-[10px]
+        sm:text-[11px]
+        uppercase
+        tracking-[0.35em]
+        text-white/40
+        font-sans
+        font-semibold
+      "
+              >
+                Seabraz IPR & Corporate Law
+              </p>
+
+              <div className="mx-auto mt-5 h-px w-20 bg-white/10" />
+
+              <p
+                className="
+        mt-5
+        max-w-md
+        text-sm
+        leading-8
+        text-white/55
+        font-semibold
+        font-serif
+        
+      "
+              >
+                Strategic legal advisory for startups, enterprises,
+                corporations, and modern businesses across India and
+                international markets.
+              </p>
             </div>
           </motion.div>
         </div>
@@ -327,15 +398,16 @@ export default function Hero() {
 
                 even:border-r-0
 
-                md:grid-cols-4
                 md:border-b-0
                 md:py-7
               "
             >
               <h3
                 className="
-                  font-serif text-2xl
-                  leading-none text-white
+                  text-2xl
+                  leading-none
+                  text-white
+
                   sm:text-3xl
                   lg:text-4xl
                 "
@@ -345,10 +417,15 @@ export default function Hero() {
 
               <p
                 className="
-                  mt-2 text-[8px]
-                  uppercase tracking-[0.18em]
-                  leading-relaxed text-white/40
+                  mt-2
+                  text-[8px]
+                  uppercase
+                  tracking-[0.18em]
+                  leading-relaxed
+                  text-white/40
+
                   sm:text-[10px]
+                  font-sans
                 "
               >
                 {stat.label}

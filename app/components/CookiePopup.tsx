@@ -7,17 +7,14 @@ export default function DisclaimerPopup() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const accepted = localStorage.getItem("disclaimer-accepted");
+    const timer = setTimeout(() => {
+      setVisible(true);
+    }, 800);
 
-    if (!accepted) {
-      setTimeout(() => {
-        setVisible(true);
-      }, 800);
-    }
+    return () => clearTimeout(timer);
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem("disclaimer-accepted", "true");
     setVisible(false);
   };
 
@@ -91,7 +88,12 @@ export default function DisclaimerPopup() {
               "
             >
               {/* HEADING */}
-              <div className="border-b border-white/10 pb-5">
+              <div
+                className="
+                  border-b border-white/10 pb-5
+                  text-center sm:text-left
+                "
+              >
                 <h2
                   className="
                     font-serif
@@ -129,53 +131,36 @@ export default function DisclaimerPopup() {
 
                   sm:text-[15px]
                   sm:leading-8
+
+                  text-center sm:text-left
                 "
               >
                 <p>
                   As per the rules of the Bar Council of India, advocates and
                   law firms are not permitted to solicit work or advertise
-                  professional services. By accessing or using this website of
-                  SEABRAZ IPR & Corporate Law, you acknowledge and confirm that
-                  you are seeking information relating to the Firm voluntarily
-                  for your own knowledge and use, and that there has been no
-                  form of solicitation, advertisement, personal communication,
-                  invitation, inducement, or encouragement by the Firm or any of
-                  its members to solicit work through this website.
+                  professional services.
                 </p>
 
                 <p>
-                  The information made available on this website is provided
-                  solely for general informational purposes and should not be
-                  construed as legal advice, legal opinion, advertisement, or
-                  professional solicitation in any manner whatsoever. Any
-                  information, materials, or content accessed, downloaded, or
-                  relied upon from this website is entirely at the user’s own
-                  discretion and risk.
+                  The content on this website is provided solely for general
+                  informational purposes and should not be considered legal
+                  advice or professional solicitation. Accessing or using this
+                  website, including contacting the Firm through any mode of
+                  communication, does not create an advocate-client relationship
+                  unless formally agreed upon.
                 </p>
 
                 <p>
-                  Transmission, receipt, or use of this website, including
-                  communication through contact forms, emails, telephone calls,
-                  or other modes of interaction, does not create an
-                  advocate-client relationship between the user and Seabraz IPR
-                  & Corporate Law unless specifically agreed through formal
-                  professional engagement.
+                  While the Firm strives to keep the information accurate and
+                  updated, no warranties are made regarding its completeness or
+                  reliability. Users are advised to seek independent legal
+                  advice before acting on any information provided on this
+                  website.
                 </p>
 
                 <p>
-                  The Firm makes reasonable efforts to ensure that the
-                  information provided on this website is accurate and up to
-                  date; however, no warranties or representations are made
-                  regarding the completeness, reliability, or accuracy of the
-                  content. Users are advised to seek independent professional
-                  legal advice before acting upon any information available on
-                  this website.
-                </p>
-
-                <p>
-                  By clicking “ACCEPT” or continuing to access this website, you
-                  acknowledge that you have read, understood, and agreed to this
-                  Disclaimer.
+                  By continuing to use this website, you confirm that you have
+                  read and understood this Disclaimer.
                 </p>
               </div>
 
