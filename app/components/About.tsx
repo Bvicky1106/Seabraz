@@ -59,7 +59,7 @@ export default function About() {
 
   return (
     <section
-      id="about"
+      
       className="relative overflow-hidden bg-black py-24 text-white sm:py-28 lg:py-32"
     >
       {/* GRID */}
@@ -201,75 +201,130 @@ export default function About() {
 
           {/* RIGHT CARD */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={storyInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{
-              duration: 1,
-              delay: 0.2,
-            }}
-            className="relative flex justify-center"
-          >
-            <div
-              className="
-                relative
-                w-full max-w-2xl
-                overflow-hidden
-                border border-white/10
-                bg-white/[0.03]
-                p-8 backdrop-blur-2xl
-                sm:p-12 lg:p-14
-              "
-            >
-              {/* INNER BORDER */}
-              <div className="absolute inset-5 border border-white/10" />
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={storyInView ? { opacity: 1, scale: 1 } : {}}
+  transition={{
+    duration: 1,
+    delay: 0.2,
+  }}
+  className="relative flex justify-center"
+>
+  <div
+    className="
+      relative
+      w-full max-w-2xl
+      overflow-hidden
+      border border-white/10
+      bg-white/[0.03]
+      p-8 backdrop-blur-2xl
+      sm:p-12 lg:p-14
+    "
+  >
+    {/* INNER BORDER */}
+    <div className="absolute inset-5 border border-white/10" />
 
-              <div className="relative z-10 text-center lg:text-left">
-                <div
-                  className="
-                    
-                    text-[90px]
-                    leading-none
-                    text-white/10
-                    sm:text-[120px]
-                  "
-                >
-                  “
-                </div>
+    {/* GLOW */}
+    <div
+      className="
+        absolute inset-0
+        bg-gradient-to-br
+        from-white/[0.03]
+        via-transparent
+        to-transparent
+      "
+    />
 
-                <blockquote
-                  className="
-                    -mt-6
-                   
-                    text-2xl
-                    leading-relaxed
-                    text-white/80
-                    sm:text-3xl
-                  "
-                >
-                  “Thalliyathor Thozhil Seidhu Ulagil Vaazhvom”
-                </blockquote>
+    <div className="relative z-10 text-center lg:text-left">
+      {/* QUOTE ICON */}
+      <div
+        className="
+          text-[90px]
+          leading-none
+          text-white/10
+          sm:text-[120px]
+        "
+      >
+        “
+      </div>
 
-                <div
-                  className="
-                    mt-10 flex flex-col items-center
-                    lg:items-start
-                  "
-                >
-                  <div className="mb-4 h-px w-12 bg-white/20" />
+      {/* TAMIL QUOTE */}
+      <blockquote
+        className="
+          -mt-6
+          text-2xl
+          leading-relaxed
+          text-white/85
+          sm:text-3xl
+        "
+      >
+        “Thalliyathor Thozhil Seidhu Ulagil Vaazhvom”
+      </blockquote>
 
-                  <p
-                    className="
-                      text-[12px]
-                      uppercase tracking-[0.3em]
-                      text-white/40
-                    "
-                  >
-                    — Mahakavi Subramania Bharathiyar
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+      {/* TRANSLATION */}
+      <div
+        className="
+          mx-auto mt-8
+          max-w-xl
+
+          border-l border-white/10
+          pl-5
+
+          text-left
+
+          lg:mx-0
+        "
+      >
+        <p
+          className="
+            text-[11px]
+            uppercase
+            tracking-[0.25em]
+            text-white/35
+          "
+        >
+          Translation
+        </p>
+
+        <p
+          className="
+            mt-3
+            text-[15px]
+            leading-8
+            italic
+            text-white/60
+
+            sm:text-[16px]
+          "
+        >
+          “Let us live in this world by creating unique and distinguished works.””
+        </p>
+      </div>
+
+      {/* AUTHOR */}
+      <div
+        className="
+          mt-10
+          flex flex-col
+          items-center
+          lg:items-start
+        "
+      >
+        <div className="mb-4 h-px w-12 bg-white/20" />
+
+        <p
+          className="
+            text-[12px]
+            uppercase
+            tracking-[0.3em]
+            text-white/40
+          "
+        >
+          — Mahakavi Subramania Bharathiyar
+        </p>
+      </div>
+    </div>
+  </div>
+</motion.div>
         </div>
 
         {/* DIVIDER */}

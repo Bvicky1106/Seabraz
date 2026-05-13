@@ -342,7 +342,7 @@ export default function Footer() {
               {footerLinks[0].links.map((link, index) => (
                 <motion.a
                   key={link}
-                  href="#"
+                 href="#practice"
                   initial={{ opacity: 0, y: 10 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{
