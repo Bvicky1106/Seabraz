@@ -133,10 +133,11 @@ export default function DisclaimerPopup() {
                   sm:leading-8
 
                   text-center sm:text-left
+                  lg:text-[18px]
                   
                 "
               >
-                <p className="text-justify">
+                <p className="text-justify ">
                   As per the rules of the Bar Council of India, advocates and
                   law firms are not permitted to solicit work or advertise
                   professional services.
