@@ -316,6 +316,7 @@ export default function About() {
                 sm:text-5xl
                 lg:text-6xl
                 font-semibold
+                
               "
             >
               Areas Of
@@ -328,6 +329,7 @@ export default function About() {
                 max-w-2xl
                 leading-8
                 text-white/60
+                text-justify-center
                 
               "
             >

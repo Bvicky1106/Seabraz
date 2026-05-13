@@ -17,14 +17,6 @@ const footerLinks = [
       "Dispute Resolution",
     ],
   },
-  {
-    title: "Firm",
-    links: ["About Us", "Our Team", "Careers", "News & Insights"],
-  },
-  {
-    title: "Resources",
-    links: ["Legal Updates", "Publications", "Case Studies"],
-  },
 ];
 
 export default function Footer() {
@@ -41,15 +33,13 @@ export default function Footer() {
       <div className="absolute inset-0 overflow-hidden">
         <div
           className="
-            absolute bottom-0 left-1/2
-            h-[260px] w-[260px]
+            absolute left-1/2 top-0
+            h-[400px] w-[400px]
             -translate-x-1/2
+
             rounded-full
             bg-white/[0.03]
             blur-3xl
-
-            sm:h-[340px] sm:w-[340px]
-            lg:h-[420px] lg:w-[420px]
           "
         />
       </div>
@@ -60,9 +50,9 @@ export default function Footer() {
           relative z-10
           mx-auto max-w-7xl
 
-          px-5 py-14
+          px-5 py-16
 
-          sm:px-8 sm:py-18
+          sm:px-8 sm:py-20
 
           lg:px-10 lg:py-24
         "
@@ -70,13 +60,14 @@ export default function Footer() {
         {/* TOP SECTION */}
         <div
           className="
-            grid gap-20
+            grid gap-16
 
-            lg:grid-cols-[1.1fr_1fr]
+            lg:grid-cols-[1.1fr_0.9fr]
             lg:gap-24
+            lg:items-center
           "
         >
-          {/* BRAND SECTION */}
+          {/* LEFT SIDE */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -93,7 +84,8 @@ export default function Footer() {
             {/* LOGO */}
             <div
               className="
-                flex items-center justify-center
+                flex items-center
+                justify-center
                 gap-4
 
                 lg:justify-start
@@ -101,13 +93,14 @@ export default function Footer() {
             >
               <div
                 className="
-                  flex h-12 w-12
+                  flex h-14 w-14
                   items-center justify-center
+
                   rounded-2xl
-                  border border-white/10
+                  border border-white/[0.08]
                   bg-white/[0.03]
 
-                  sm:h-14 sm:w-14
+                  backdrop-blur-xl
                 "
               >
                 <Image
@@ -123,13 +116,11 @@ export default function Footer() {
                 <h2
                   className="
                     font-[family-name:var(--font-space)]
-                    text-[13px]
+                    text-[15px]
                     font-semibold
                     uppercase
                     tracking-[0.22em]
                     text-white
-
-                    sm:text-[15px]
                   "
                 >
                   Seabraz
@@ -138,13 +129,10 @@ export default function Footer() {
                 <p
                   className="
                     mt-1
-                    font-[family-name:var(--font-space)]
                     text-[10px]
                     uppercase
-                    tracking-[0.16em]
+                    tracking-[0.18em]
                     text-white/40
-
-                    sm:text-[11px]
                   "
                 >
                   IPR & Corporate Law
@@ -155,41 +143,33 @@ export default function Footer() {
             {/* DESCRIPTION */}
             <p
               className="
-                mt-7
-                max-w-full
+                mt-8
+                max-w-xl
 
-                text-center
-                font-[family-name:var(--font-inter)]
                 text-[14px]
                 leading-8
                 text-white/55
 
-                sm:mt-8
-                sm:max-w-xl
                 sm:text-[15px]
 
-                lg:max-w-md
+                text-center
                 lg:text-left
-                lg:text-justify
               "
             >
-              Seabraz IPR & Corporate Law is committed to delivering
-              professional, reliable, and business-focused legal solutions with
-              integrity, precision, and expert-driven guidance. We strive to
-              build lasting relationships through trust, transparency, and a
-              dedication to protecting the interests, innovations, and growth of
-              every client we serve.
+              Seabraz IPR & Corporate Law delivers strategic legal
+              solutions with precision, integrity, and business-focused
+              expertise. We are committed to protecting innovation,
+              resolving complex legal matters, and supporting long-term
+              client growth through trusted legal guidance.
             </p>
 
             {/* SOCIALS */}
             <div
               className="
-                mt-8
+                mt-10
                 flex flex-wrap
                 justify-center
                 gap-4
-
-                sm:mt-10
 
                 lg:justify-start
               "
@@ -199,171 +179,219 @@ export default function Footer() {
                   key={social}
                   href="#"
                   className="
-                    group flex items-center gap-2
+                    group relative overflow-hidden
 
                     rounded-full
-                    border border-white/10
+                    border border-white/[0.08]
                     bg-white/[0.03]
 
-                    px-4 py-2.5
+                    px-5 py-3
 
-                    font-[family-name:var(--font-space)]
                     text-[10px]
                     uppercase
                     tracking-[0.18em]
                     text-white/60
 
-                    transition-all duration-300
+                    transition-all duration-500
 
                     hover:border-white/20
-                    hover:bg-white/[0.05]
+                    hover:bg-white/[0.06]
                     hover:text-white
-
-                    sm:px-5
-                    sm:py-3
-                    sm:text-[12px]
                   "
                 >
-                  {social}
+                  <span className="relative z-10">{social}</span>
+
+                  <div
+                    className="
+                      absolute inset-0
+                      -translate-x-full
+
+                      bg-gradient-to-r
+                      from-transparent
+                      via-white/10
+                      to-transparent
+
+                      transition-transform duration-1000
+                      group-hover:translate-x-full
+                    "
+                  />
                 </a>
               ))}
             </div>
           </motion.div>
 
-          {/* LINKS GRID */}
-          <div
+          {/* RIGHT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{
+              delay: 0.2,
+              duration: 0.7,
+            }}
             className="
-              grid grid-cols-1
-              gap-14
+              flex flex-col
+              items-center
+              justify-center
 
-              pt-2
-              text-center
+              rounded-[32px]
+              border border-white/[0.06]
+              bg-white/[0.02]
 
-              sm:grid-cols-2
-              sm:gap-12
+              px-6 py-10
 
-              md:grid-cols-3
+              backdrop-blur-xl
 
-              lg:text-left
+              sm:px-10 sm:py-12
             "
           >
-            {footerLinks.map((col, i) => (
-              <motion.div
-                key={col.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{
-                  delay: 0.1 + i * 0.1,
-                  duration: 0.6,
-                }}
+            {/* TITLE */}
+            <div className="flex flex-col items-center">
+              <span
                 className="
-                  flex flex-col
-                  items-center
+                  mb-3
 
-                  lg:items-start
+                  h-px
+                  w-14
+
+                  bg-gradient-to-r
+                  from-transparent
+                  via-white/40
+                  to-transparent
+                "
+              />
+
+              <h4
+                className="
+                  text-[11px]
+                  font-medium
+                  uppercase
+                  tracking-[0.28em]
+                  text-white/40
                 "
               >
-                <h4
+                Practice Areas
+              </h4>
+            </div>
+
+            {/* LINKS */}
+            <div
+              className="
+                mt-10
+
+                grid grid-cols-1
+                gap-4
+
+                w-full
+                max-w-md
+              "
+            >
+              {footerLinks[0].links.map((link, index) => (
+                <motion.a
+                  key={link}
+                  href="#"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{
+                    delay: 0.1 + index * 0.08,
+                    duration: 0.5,
+                  }}
                   className="
-                    mb-6
+                    group
 
-                    font-[family-name:var(--font-space)]
-                    text-[10px]
-                    font-semibold
-                    uppercase
-                    tracking-[0.18em]
-                    text-white/40
+                    flex items-center
+                    justify-between
 
-                    sm:text-[11px]
+                    rounded-2xl
+                    border border-white/[0.06]
+                    bg-white/[0.02]
+
+                    px-5 py-4
+
+                    transition-all duration-300
+
+                    hover:border-white/15
+                    hover:bg-white/[0.04]
+                    hover:-translate-y-1
                   "
                 >
-                  {col.title}
-                </h4>
+                  <span
+                    className="
+                      text-[14px]
+                      font-light
+                      tracking-[0.01em]
+                      text-white/70
 
-                <ul
-                  className="
-                    flex flex-col
-                    items-center
-                    space-y-4
+                      transition-colors duration-300
+                      group-hover:text-white
+                    "
+                  >
+                    {link}
+                  </span>
 
-                    lg:items-start
-                  "
-                >
-                  {col.links.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="
-                          group inline-flex
-                          items-center gap-2
+                  <div
+                    className="
+                      flex h-8 w-8
+                      items-center justify-center
 
-                          font-[family-name:var(--font-inter)]
-                          text-[13px]
-                          font-light
-                          text-white/55
+                      rounded-full
+                      border border-white/[0.08]
 
-                          transition-all duration-300
-                          hover:text-white
+                      bg-white/[0.03]
 
-                          sm:text-[14px]
-                        "
-                      >
-                        <span>{link}</span>
+                      transition-all duration-300
 
-                        <ArrowUpRight
-                          size={14}
-                          className="
-                            opacity-0
-                            transition-all duration-300
+                      group-hover:border-white/20
+                      group-hover:bg-white/[0.08]
+                    "
+                  >
+                    <ArrowUpRight
+                      size={14}
+                      className="
+                        text-white/50
+                        transition-all duration-300
 
-                            group-hover:-translate-y-0.5
-                            group-hover:translate-x-0.5
-                            group-hover:opacity-100
-                          "
-                        />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
+                        group-hover:translate-x-0.5
+                        group-hover:-translate-y-0.5
+                        group-hover:text-white
+                      "
+                    />
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
         </div>
 
         {/* DIVIDER */}
         <div
           className="
-            my-12
+            my-14
             h-px
             w-full
             bg-white/[0.06]
-
-            sm:my-14
           "
         />
 
-        {/* BOTTOM SECTION */}
+        {/* BOTTOM */}
         <div
           className="
             flex flex-col
             items-center
-            justify-center
+            justify-between
             gap-6
 
             text-center
 
             lg:flex-row
-            lg:justify-between
-            lg:text-left
           "
         >
-          {/* POLICY LINKS */}
+          {/* POLICY */}
           <div
             className="
               flex flex-wrap
               items-center
               justify-center
-              gap-5
+              gap-6
             "
           >
             <a
@@ -371,15 +399,11 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="
-                font-[family-name:var(--font-inter)]
                 text-[11px]
-                font-light
                 text-white/35
 
                 transition-colors duration-300
                 hover:text-white/70
-
-                sm:text-[12px]
               "
             >
               Privacy Policy
@@ -390,15 +414,11 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="
-                font-[family-name:var(--font-inter)]
                 text-[11px]
-                font-light
                 text-white/35
 
                 transition-colors duration-300
                 hover:text-white/70
-
-                sm:text-[12px]
               "
             >
               Disclaimer
@@ -408,22 +428,15 @@ export default function Footer() {
           {/* COPYRIGHT */}
           <p
             className="
-              max-w-xs
-
-              text-center
-              font-[family-name:var(--font-inter)]
               text-[11px]
               leading-6
               text-white/30
 
-              sm:max-w-xl
               sm:text-[12px]
-
-              lg:text-right
             "
           >
-            © {new Date().getFullYear()} Seabraz IPR & Corporate Law Firm. All
-            rights reserved.
+            © {new Date().getFullYear()} Seabraz IPR & Corporate Law Firm.
+            All rights reserved.
           </p>
         </div>
       </div>

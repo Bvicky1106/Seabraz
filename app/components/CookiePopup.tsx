@@ -9,7 +9,7 @@ export default function DisclaimerPopup() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(true);
-    }, 800);
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -96,7 +96,7 @@ export default function DisclaimerPopup() {
               >
                 <h2
                   className="
-                    font-serif
+                 
                     text-2xl
                     text-white
 
