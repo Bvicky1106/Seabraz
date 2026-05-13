@@ -223,6 +223,7 @@ export default function Contact() {
               sm:text-center
 
               [text-align-last:center]
+               lg:text-[20px]
             "
           >
             Connect with Seabraz IPR & Corporate Law to discuss your
@@ -273,7 +274,7 @@ export default function Contact() {
               {/* NAME + EMAIL */}
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
-                  <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45">
+                  <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45  lg:text-[15px]">
                     Full Name
                   </label>
 
@@ -291,7 +292,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45">
+                  <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45  lg:text-[15px]">
                     Email Address
                   </label>
 
@@ -312,7 +313,7 @@ export default function Contact() {
               {/* PHONE + COMPANY */}
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
-                  <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45">
+                  <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45  lg:text-[15px]">
                     Phone Number
                   </label>
 
@@ -329,7 +330,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45">
+                  <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45  lg:text-[15px]">
                     Company
                   </label>
 
@@ -348,7 +349,7 @@ export default function Contact() {
 
               {/* SELECT */}
               <div>
-                <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45">
+                <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45  lg:text-[15px]">
                   Area of Interest
                 </label>
 
@@ -395,7 +396,7 @@ export default function Contact() {
 
               {/* MESSAGE */}
               <div>
-                <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45">
+                <label className="mb-3 block text-[11px] uppercase tracking-[0.15em] text-white/45 lg:text-[15px]">
                   Message
                 </label>
 
@@ -437,6 +438,7 @@ export default function Contact() {
 
                   transition-all duration-300
                   hover:bg-neutral-200
+                  lg:text-[15px]
                 "
               >
                 {loading ? "Sending..." : "Submit Inquiry"}
@@ -477,6 +479,7 @@ export default function Contact() {
 
                     transition-all duration-500
                     hover:bg-white/[0.04]
+                      
                   "
                 >
                   <div className="flex items-start gap-5">
@@ -502,6 +505,7 @@ export default function Contact() {
                           uppercase
                           tracking-[0.18em]
                           text-white/40
+                          lg:text-[15px]
                         "
                       >
                         {info.label}
@@ -514,6 +518,7 @@ export default function Contact() {
                           text-[15px]
                           leading-relaxed
                           text-white/80
+                          lg:text-[15px]
                         "
                       >
                         {info.value}

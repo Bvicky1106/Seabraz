@@ -121,6 +121,7 @@ export default function Footer() {
                     uppercase
                     tracking-[0.22em]
                     text-white
+                    lg:text-[18px]
                   "
                 >
                   Seabraz
@@ -133,6 +134,7 @@ export default function Footer() {
                     uppercase
                     tracking-[0.18em]
                     text-white/40
+                    lg:text-[18px]
                   "
                 >
                   IPR & Corporate Law
@@ -154,6 +156,10 @@ export default function Footer() {
 
                 text-center
                 lg:text-left
+                text-justify
+                              [text-align-last:center]
+                              lg:text-[18px]
+                
               "
             >
               Seabraz IPR & Corporate Law delivers strategic legal
@@ -164,60 +170,107 @@ export default function Footer() {
             </p>
 
             {/* SOCIALS */}
-            <div
-              className="
-                mt-10
-                flex flex-wrap
-                justify-center
-                gap-4
+           
+<div
+  className="
+    mt-10
+    flex flex-wrap
+    justify-center
+    gap-4
 
-                lg:justify-start
-              "
-            >
-              {["LinkedIn", "Twitter"].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="
-                    group relative overflow-hidden
+    lg:justify-start
+    
+  "
+>
+  <a
+    href="https://www.instagram.com/seabraz_legal?igsh=b3lobTJ4Y2owbHRz"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      group relative overflow-hidden
 
-                    rounded-full
-                    border border-white/[0.08]
-                    bg-white/[0.03]
+      rounded-full
+      border border-white/[0.08]
+      bg-white/[0.03]
 
-                    px-5 py-3
+      px-5 py-3
 
-                    text-[10px]
-                    uppercase
-                    tracking-[0.18em]
-                    text-white/60
+      text-[10px]
+      uppercase
+      tracking-[0.18em]
+      text-white/60
 
-                    transition-all duration-500
+      transition-all duration-500
 
-                    hover:border-white/20
-                    hover:bg-white/[0.06]
-                    hover:text-white
-                  "
-                >
-                  <span className="relative z-10">{social}</span>
+      hover:border-white/20
+      hover:bg-white/[0.06]
+      hover:text-white
+      lg:text-[15px]
+    "
+  >
+    <span className="relative z-10">Instagram</span>
 
-                  <div
-                    className="
-                      absolute inset-0
-                      -translate-x-full
+    <div
+      className="
+        absolute inset-0
+        -translate-x-full
 
-                      bg-gradient-to-r
-                      from-transparent
-                      via-white/10
-                      to-transparent
+        bg-gradient-to-r
+        from-transparent
+        via-white/10
+        to-transparent
 
-                      transition-transform duration-1000
-                      group-hover:translate-x-full
-                    "
-                  />
-                </a>
-              ))}
-            </div>
+        transition-transform duration-1000
+        group-hover:translate-x-full
+        
+      "
+    />
+  </a>
+
+  <a
+    href="https://www.linkedin.com/company/seabraz-ipr-corporate-law-firm/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      group relative overflow-hidden
+
+      rounded-full
+      border border-white/[0.08]
+      bg-white/[0.03]
+
+      px-5 py-3
+
+      text-[10px]
+      uppercase
+      tracking-[0.18em]
+      text-white/60
+
+      transition-all duration-500
+
+      hover:border-white/20
+      hover:bg-white/[0.06]
+      hover:text-white
+      lg:text-[15px]
+    "
+  >
+    <span className="relative z-10">LinkedIn</span>
+
+    <div
+      className="
+        absolute inset-0
+        -translate-x-full
+
+        bg-gradient-to-r
+        from-transparent
+        via-white/10
+        to-transparent
+
+        transition-transform duration-1000
+        group-hover:translate-x-full
+      "
+    />
+  </a>
+</div>
           </motion.div>
 
           {/* RIGHT SIDE */}
@@ -267,6 +320,7 @@ export default function Footer() {
                   uppercase
                   tracking-[0.28em]
                   text-white/40
+                  lg:text-[18px]
                 "
               >
                 Practice Areas
@@ -312,12 +366,14 @@ export default function Footer() {
                     hover:border-white/15
                     hover:bg-white/[0.04]
                     hover:-translate-y-1
+                    
                   "
                 >
                   <span
                     className="
-                      text-[14px]
-                      font-light
+                      text-[13px]
+                      font-medium
+                      uppercase
                       tracking-[0.01em]
                       text-white/70
 
@@ -404,6 +460,7 @@ export default function Footer() {
 
                 transition-colors duration-300
                 hover:text-white/70
+                lg:text-[15px]
               "
             >
               Privacy Policy
@@ -419,6 +476,7 @@ export default function Footer() {
 
                 transition-colors duration-300
                 hover:text-white/70
+                lg:text-[15px]
               "
             >
               Disclaimer
@@ -433,6 +491,7 @@ export default function Footer() {
               text-white/30
 
               sm:text-[12px]
+              lg:text-[15px]
             "
           >
             © {new Date().getFullYear()} Seabraz IPR & Corporate Law Firm.

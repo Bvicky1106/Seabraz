@@ -88,7 +88,7 @@ export default function Hero() {
                   uppercase tracking-[0.25em]
                   text-white/60
                   sm:text-[10px]
-                  font-sans
+               
                 "
               >
                 Seabraz IPR & Corporate Law
@@ -167,15 +167,15 @@ export default function Hero() {
   max-w-xl
   font-[family-name:var(--font-inter)]
   text-[15px]
-  leading-8
+  
   text-white/60
-  font-normal
+  
 
-  sm:mt-10
-  sm:text-base
+  
  text-justify
   mx-auto
   lg:mx-0
+   lg:text-[20px]
 "
             >
               Seabraz IPR & Corporate Law delivers strategic legal, intellectual
@@ -227,7 +227,7 @@ export default function Hero() {
                   hover:scale-[1.02]
                   sm:px-8
                   sm:text-[11px]
-                  font-sans
+                 
                 "
               >
                 <div className="relative z-10 flex items-center justify-center gap-3">
@@ -272,7 +272,8 @@ export default function Hero() {
                   hover:text-white
                   sm:px-8
                   sm:text-[11px]
-                  font-sans
+                  
+                  
                 "
               >
                 Explore Expertise
@@ -346,11 +347,12 @@ export default function Hero() {
               <p
                 className="
                   text-[10px]
-                  sm:text-[11px]
+                  sm:text-[15px]
                   uppercase
                   tracking-[0.35em]
                   text-white/40
-                  font-sans
+                   lg:text-[17px]
+                  
                 "
               >
                 Seabraz IPR & Corporate Law
@@ -362,10 +364,11 @@ export default function Hero() {
                 className="
                   mt-5
                   max-w-md
-                  text-sm
+                  text-10
                   leading-8
                   text-white/55
                    text-justify-center
+                    lg:text-[17px]
                   
                 "
               >
@@ -433,7 +436,7 @@ export default function Hero() {
                   text-white/40
 
                   sm:text-[10px]
-                  font-sans
+                  
                 "
               >
                 {stat.label}

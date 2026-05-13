@@ -155,7 +155,7 @@ export default function About() {
 
             {/* TEXT */}
             <div className="mt-10 max-w-2xl space-y-7">
-              <p className="text-[15px] leading-8 text-white/60 font-semibold  text-justify">
+              <p className="text-[15px] leading-8 text-white/60   text-justify  lg:text-[20px]">
                 Seabraz IPR & Corporate Law is a modern legal and corporate
                 consultancy dedicated to supporting startups, entrepreneurs,
                 businesses, and growing enterprises with strategic, reliable,
@@ -166,7 +166,7 @@ export default function About() {
                 with confidence.
               </p>
 
-              <p className="text-[15px] leading-8 text-white/60  text-justify">
+              <p className="text-[15px] leading-8 text-white/60  text-justify  lg:text-[20px]">
                 Our team consists of qualified advocates, legal professionals,
                 consultants, and domain-specific experts, ensuring that every
                 matter is handled by experienced specialists in their respective
@@ -191,6 +191,7 @@ export default function About() {
                   text-[10px]
                   uppercase tracking-[0.35em]
                   text-white/40
+                   
                 "
               >
                 Established 2026
@@ -301,6 +302,7 @@ export default function About() {
                   text-[10px]
                   uppercase tracking-[0.3em]
                   text-white/60
+                   lg:text-[20px]
                 "
               >
                 Practice Areas
@@ -329,10 +331,11 @@ export default function About() {
   max-w-2xl
   leading-8
   text-white/60
-
+  text-[15px]
   text-justify
   sm:text-center
   [text-align-last:center]
+   lg:text-[20px]
 "
             >
               Our multidisciplinary legal practice delivers sophisticated
@@ -393,9 +396,10 @@ export default function About() {
                   className="
                     relative z-10
                     mt-8
-                    text-2xl
+                    text-[18px]
                     leading-snug
                     text-white
+                     lg:text-[20px]
                     
                   "
                 >
@@ -410,6 +414,7 @@ export default function About() {
                     leading-8
                     text-white/55
                      text-justify
+                      lg:text-[18px]
                   "
                 >
                   {area.description}
