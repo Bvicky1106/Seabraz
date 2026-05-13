@@ -88,56 +88,56 @@ export default function Contact() {
     });
   };
 
-  const sendEmail = async (e: React.FormEvent) => {
-    e.preventDefault();
+ const sendEmail = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    setLoading(true);
+  setLoading(true);
 
-    try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          full_name: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-          company: formData.company,
-          interest: formData.interest,
-          message: formData.message,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
-      );
+  try {
+    await emailjs.send(
+      "service_iuqycll",
+      "template_0a7jtjp",
+      {
+        full_name: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        interest: formData.interest,
+        message: formData.message,
+      },
+      "rAg0ZXqYpgkmtlNWh",
+    );
 
-      setPopup({
-        show: true,
-        type: "success",
-        title: "Inquiry Submitted",
-        message:
-          "Your consultation request has been successfully submitted. Our legal team will contact you shortly.",
-      });
+    setPopup({
+      show: true,
+      type: "success",
+      title: "Inquiry Submitted",
+      message:
+        "Your consultation request has been successfully submitted. Our legal team will contact you shortly.",
+    });
 
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        company: "",
-        interest: "",
-        message: "",
-      });
-    } catch (error) {
-      console.error(error);
+    setFormData({
+      fullName: "",
+      email: "",
+      phone: "",
+      company: "",
+      interest: "",
+      message: "",
+    });
+  } catch (error) {
+    console.error(error);
 
-      setPopup({
-        show: true,
-        type: "error",
-        title: "Submission Failed",
-        message:
-          "We were unable to send your inquiry at the moment. Please try again shortly.",
-      });
-    }
+    setPopup({
+      show: true,
+      type: "error",
+      title: "Submission Failed",
+      message:
+        "We were unable to send your inquiry at the moment. Please try again shortly.",
+    });
+  }
 
-    setLoading(false);
-  };
+  setLoading(false);
+};
 
   return (
     <section
