@@ -325,13 +325,15 @@ export default function About() {
 
             <p
               className="
-                mx-auto mt-8
-                max-w-2xl
-                leading-8
-                text-white/60
-                text-justify-center
-                
-              "
+  mx-auto mt-8
+  max-w-2xl
+  leading-8
+  text-white/60
+
+  text-justify
+  sm:text-center
+  [text-align-last:center]
+"
             >
               Our multidisciplinary legal practice delivers sophisticated
               counsel across corporate, intellectual property, regulatory, and

@@ -148,7 +148,9 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-6 text-[15px] leading-relaxed text-white/55 md:text-[16px] "
+            className="mt-6 text-[15px] leading-relaxed text-white/55 md:text-[16px] text-justify
+  sm:text-center
+  [text-align-last:center]"
           >
             Connect with Seabraz IPR & Corporate Law to discuss your legal,
             intellectual property, corporate, or compliance requirements with
