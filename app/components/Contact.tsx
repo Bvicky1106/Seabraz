@@ -139,7 +139,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={headInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-8 font-serif text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl"
+            className="mt-8  text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl"
           >
             Request a Consultation
           </motion.h2>

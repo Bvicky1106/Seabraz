@@ -225,7 +225,7 @@ export default function About() {
               <div className="relative z-10 text-center lg:text-left">
                 <div
                   className="
-                    font-serif
+                    
                     text-[90px]
                     leading-none
                     text-white/10
@@ -238,7 +238,7 @@ export default function About() {
                 <blockquote
                   className="
                     -mt-6
-                    font-serif
+                   
                     text-2xl
                     leading-relaxed
                     text-white/80
@@ -258,7 +258,7 @@ export default function About() {
 
                   <p
                     className="
-                      text-[10px]
+                      text-[12px]
                       uppercase tracking-[0.3em]
                       text-white/40
                     "
@@ -379,7 +379,7 @@ export default function About() {
                 <span
                   className="
                     relative z-10
-                    font-serif
+                    
                     text-[13px]
                     text-white/30
                   "
@@ -391,7 +391,6 @@ export default function About() {
                   className="
                     relative z-10
                     mt-8
-                    font-serif
                     text-2xl
                     leading-snug
                     text-white

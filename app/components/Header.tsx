@@ -122,7 +122,7 @@ export default function Header() {
               <div className="flex flex-col">
                 <span
                   className="
-                    font-[family-name:var(--font-space)]
+                   
                     text-[13px]
                     font-semibold
                     uppercase
@@ -136,7 +136,7 @@ export default function Header() {
                 <span
                   className="
                     mt-1
-                    font-[family-name:var(--font-space)]
+                    
                     text-[10px]
                     uppercase
                     tracking-[0.22em]
