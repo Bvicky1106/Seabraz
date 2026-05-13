@@ -59,7 +59,7 @@ export default function About() {
 
   return (
     <section
-      
+      id="about"
       className="relative overflow-hidden bg-black py-24 text-white sm:py-28 lg:py-32"
     >
       {/* GRID */}
@@ -296,7 +296,7 @@ export default function About() {
             sm:text-[16px]
           "
         >
-          “Let us live in this world by creating unique and distinguished works.””
+          “Let us live in this world by creating unique and distinguished works.”
         </p>
       </div>
 
