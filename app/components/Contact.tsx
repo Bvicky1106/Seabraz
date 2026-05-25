@@ -500,8 +500,7 @@ export default function Contact() {
                       <h3
                         className="
                           mb-3
-
-                          text-[11px]
+                          text-[14px]
                           uppercase
                           tracking-[0.18em]
                           text-white/40
